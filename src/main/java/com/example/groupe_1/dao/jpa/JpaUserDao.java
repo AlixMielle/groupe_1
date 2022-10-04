@@ -16,9 +16,9 @@ import java.util.Optional;
 public class JpaUserDao implements UserDao {
 
     /**
-     * A method to display all recipes.
+     * A method to display all users.
      *
-     * @return recipeList : list of all recipes
+     * @return userList : list of all users
      */
     @Override
     public List<User> findAll() {
@@ -37,9 +37,9 @@ public class JpaUserDao implements UserDao {
     }
 
     /**
-     * A method to display one recipe found by the id.
+     * A method to display one user found by the id.
      *
-     * @return recipe : just one recipe
+     * @return user : just one user
      */
     @Override
     public Optional<User> findOne(int id) {
@@ -61,10 +61,10 @@ public class JpaUserDao implements UserDao {
     }
 
     /**
-     * A method to create a recipe.
+     * A method to create a user.
      *
-     * @return true if the recipe is created
-     * @return false if the recipe is not created
+     * @return true if the user is created
+     * @return false if the user is not created
      */
     @Override
     public boolean create(User user) {
@@ -86,10 +86,10 @@ public class JpaUserDao implements UserDao {
     }
 
     /**
-     * A method to modify a recipe.
+     * A method to modify a user.
      *
-     * @return true if the recipe is modified
-     * @return false if the recipe is not modified
+     * @return true if the user is modified
+     * @return false if the user is not modified
      */
     @Override
     public boolean edit(User user) {
@@ -111,10 +111,10 @@ public class JpaUserDao implements UserDao {
     }
 
     /**
-     * A method to delete a recipe.
+     * A method to delete a user.
      *
-     * @return true if the recipe is deleted
-     * @return false if the recipe is not deleted
+     * @return true if the user is deleted
+     * @return false if the user is not deleted
      */
     @Override
     public boolean delete(int id) {
