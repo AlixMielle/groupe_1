@@ -1,5 +1,7 @@
 package com.example.groupe_1.dao;
 
+import com.example.groupe_1.entity.User;
+
 import java.util.List;
 import java.util.Optional;
 
