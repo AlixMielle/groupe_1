@@ -1,7 +1,7 @@
 package com.example.groupe_1.dao.jpa;
 
-import com.example.groupe_1.dao.UserDao;
-import com.example.groupe_1.entity.User;
+import com.example.groupe_1.dao.IngredientDao;
+import com.example.groupe_1.entity.Ingredient;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
@@ -11,45 +11,45 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * implements the CRUD's methods of User Class with JPA
+ * implements the CRUD's methods of Ingredient Class with JPA
  */
-public class JpaUserDao implements UserDao {
+public class JpaIngredientDao implements IngredientDao {
 
     /**
-     * A method to display all users.
+     * A method to display all ingredients.
      *
-     * @return userList : list of all users
+     * @return ingredientList : list of all ingredients
      */
     @Override
-    public List<User> findAll() {
-        List<User> userList = new ArrayList<>();
+    public List<Ingredient> findAll() {
+        List<Ingredient> ingredientList = new ArrayList<>();
         EntityManagerFactory emf = EMFManager.getEMF();
         EntityManager em = emf.createEntityManager();
         try {
-            userList = em.createQuery("select u from User u", User.class)
+            ingredientList = em.createQuery("select i from Ingredient i", Ingredient.class)
                     .getResultList();
         } catch (RuntimeException re) {
             re.printStackTrace();
         } finally {
             em.close();
         }
-        return userList;
+        return ingredientList;
     }
 
     /**
-     * A method to display one user found by the id.
+     * A method to display one ingredient found by the id.
      *
-     * @return user : just one user
+     * @return ingredient : just one ingredient
      */
     @Override
-    public Optional<User> findOne(int id) {
+    public Optional<Ingredient> findOne(int id) {
         EntityManagerFactory emf = EMFManager.getEMF();
         EntityManager em = emf.createEntityManager();
         EntityTransaction et = em.getTransaction();
-        User user = null;
+        Ingredient ingredient = null;
         try {
             et.begin();
-            user = em.find(User.class, id);
+            ingredient = em.find(Ingredient.class, id);
             et.commit();
         } catch (RuntimeException re) {
             if (et.isActive())
@@ -57,48 +57,23 @@ public class JpaUserDao implements UserDao {
         } finally {
             em.close();
         }
-        return Optional.ofNullable(user);
+        return Optional.ofNullable(ingredient);
     }
 
     /**
-     * A method to create a user.
+     * A method to create an ingredient.
      *
-     * @return true if the user is created
-     * @return false if the user is not created
+     * @return true if the ingredient is created
+     * @return false if the ingredient is not created
      */
     @Override
-    public boolean create(User user) {
+    public boolean create(Ingredient ingredient) {
         EntityManagerFactory emf = EMFManager.getEMF();
         EntityManager em = emf.createEntityManager();
         EntityTransaction et = em.getTransaction();
         try {
             et.begin();
-            em.persist(user);
-            et.commit();
-            return true;
-        } catch (RuntimeException re) {
-            if (et.isActive())
-                et.rollback();
-        } finally {
-            em.close();
-        }
-        return false;
-    }
-
-    /**
-     * A method to modify a user.
-     *
-     * @return true if the user is modified
-     * @return false if the user is not modified
-     */
-    @Override
-    public boolean edit(User user) {
-        EntityManagerFactory emf = EMFManager.getEMF();
-        EntityManager em = emf.createEntityManager();
-        EntityTransaction et = em.getTransaction();
-        try {
-            et.begin();
-            em.merge(user);
+            em.persist(ingredient);
             et.commit();
             return true;
         } catch (RuntimeException re) {
@@ -111,10 +86,35 @@ public class JpaUserDao implements UserDao {
     }
 
     /**
-     * A method to delete a user.
+     * A method to modify an ingredient.
      *
-     * @return true if the user is deleted
-     * @return false if the user is not deleted
+     * @return true if the ingredient is deleted
+     * @return false if the ingredient is not deleted
+     */
+    @Override
+    public boolean edit(Ingredient ingredient) {
+        EntityManagerFactory emf = EMFManager.getEMF();
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction et = em.getTransaction();
+        try {
+            et.begin();
+            em.merge(ingredient);
+            et.commit();
+            return true;
+        } catch (RuntimeException re) {
+            if (et.isActive())
+                et.rollback();
+        } finally {
+            em.close();
+        }
+        return false;
+    }
+
+    /**
+     * A method to delete an ingredient.
+     *
+     * @return true if the ingredient is deleted
+     * @return false if the ingredient is not deleted
      */
     @Override
     public boolean delete(int id) {
@@ -123,8 +123,8 @@ public class JpaUserDao implements UserDao {
         EntityTransaction et = em.getTransaction();
         try {
             et.begin();
-            User user = em.find(User.class, id);
-            em.remove(user);
+            Ingredient ingredient = em.find(Ingredient.class, id);
+            em.remove(ingredient);
             et.commit();
             return true;
         } catch (RuntimeException re) {
