@@ -2,6 +2,8 @@ package com.example.groupe_1.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
@@ -11,9 +13,18 @@ public class Ingredient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    @ManyToMany
-    @JoinTable(name = "recipe_ingredients")
-    private List<Recipe> recipeList;
+
+
+    @ManyToMany(mappedBy = "ingredientList")
+    private List<Recipe> recipeList = new ArrayList();
+
+    public List<Recipe> getRecipeList() {
+        return recipeList;
+    }
+
+    public void setRecipeList(List<Recipe> recipeList) {
+        this.recipeList = recipeList;
+    }
 
     public Ingredient(int id, String name) {
         this.id = id;

@@ -2,6 +2,8 @@ package com.example.groupe_1.servlet.recipeCRUD;
 
 import com.example.groupe_1.dao.DaoFactory;
 import com.example.groupe_1.dao.RecipeDao;
+
+import com.example.groupe_1.entity.Difficulty;
 import com.example.groupe_1.entity.Recipe;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;

@@ -2,7 +2,7 @@ package com.example.groupe_1.entity;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -18,11 +18,26 @@ public class Recipe {
     private int timeCooking;
     private Difficulty difficulty; //enum pareil
     private float price; //en euros
-    //private List<Utensil> utensils; //on ajoute plus tard
-    @ManyToMany(mappedBy = "recipe")
-    private List<Ingredient> ingredientList;
+
     @OneToMany(mappedBy = "recipe")
     private List<RecipeStep> steps; //etapes de recette
+
+    @ManyToMany
+    @JoinTable(name = "recipe_ingredient",
+            joinColumns = {@JoinColumn(name = "recipe_id", referencedColumnName = "id")},
+            inverseJoinColumns=
+                    {@JoinColumn(name="ingredient-id", referencedColumnName="id")})
+    private List<Ingredient> ingredientList = new ArrayList<>();
+
+    public List<Ingredient> getIngredients() {
+        return ingredientList;
+    }
+
+    public void setIngredients(List<Ingredient> ingredients) {
+        this.ingredientList = ingredients;
+    }
+
+    //private List<Utensil> utensils; //on ajoute plus tard
     //private User creator; //user who created the recipe
     //private Date dateAdded; //date de creation de la recette
 
@@ -103,5 +118,9 @@ public class Recipe {
 
     public void setPrice(float price) {
         this.price = price;
+    }
+    public void addIngredient(Ingredient ingredient){
+        this.ingredientList.add(ingredient);
+        ingredient.getRecipeList().add(this);
     }
 }
