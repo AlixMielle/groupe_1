@@ -1,4 +1,4 @@
-package com.example.groupe_1;
+package com.example.groupe_1.servlet;
 
 import java.io.*;
 
