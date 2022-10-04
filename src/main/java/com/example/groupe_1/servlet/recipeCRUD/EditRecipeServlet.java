@@ -13,45 +13,55 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.Optional;
 
-@WebServlet("/recipe/add")
-public class CreateRecipeServlet extends HttpServlet {
+@WebServlet("/recipe/edit")
+public class EditRecipeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/createRecipe.jsp");
+        RecipeDao recipeDao = DaoFactory.getRecipeDAO();
+        Optional<Recipe> optionalRecipe = recipeDao.findOne(Integer.parseInt(req.getParameter("recipeId")));
+        if(optionalRecipe.isPresent()){
+            Recipe recipe = optionalRecipe.get();
+            req.setAttribute("recipe", recipe);
+        }
+        else{
+            //on peut utiliser ça dans le .jsp pour faire un 404 custom
+            req.setAttribute("itemNotFound", true);
+        }
+
+        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/editRecipe.jsp");
         rd.forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        String id = req.getParameter("id"); //must be the id passed on originally
         String name = req.getParameter("name");
         String type = req.getParameter("type");
         String timePreparation = req.getParameter("timePreparation");
-        String timeRest = req.getParameter("timeRest");
-        String timeCooking = req.getParameter("timeCooking");
         String difficulty = req.getParameter("difficulty");
         String price = req.getParameter("price");
 
         try{
             RecipeDao recipeDao = DaoFactory.getRecipeDAO();
-            recipeDao.create(new Recipe(
-                    0, //c'est remplacé automatiquement par le persist donc ça peut être n'importe quoi
+            recipeDao.edit(new Recipe(
+                    Integer.parseInt(id),
                     name,
                     Type.valueOf(type.toUpperCase()),
                     Integer.parseInt(timePreparation),
-                    Integer.parseInt(timeRest),
-                    Integer.parseInt(timeCooking),
+                    Integer.parseInt(timePreparation),
+                    Integer.parseInt(timePreparation),
                     Difficulty.valueOf(difficulty.toUpperCase()),
                     Float.parseFloat(price)
             ));
         }catch (Exception e){
-            //if addition fail, reload the add page
-            resp.sendRedirect(req.getContextPath() + "/recipe/add");
+            //if edit fails, send back to the edit page for the same recipe (will reload DB data)
+            resp.sendRedirect(req.getContextPath() + "/recipe/edit?recipeId=" + id);
         }
-        //if addition succeeds, send to the all recipes page. Could send to details but that might require some finagling
-        resp.sendRedirect(req.getContextPath() + "/recipe/all");
-
+        //if edit succeeds, send back to the details page for that recipe
+        resp.sendRedirect(req.getContextPath() + "/recipe?recipeId=" + id);
     }
 }

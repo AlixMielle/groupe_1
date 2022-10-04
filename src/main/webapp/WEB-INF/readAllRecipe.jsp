@@ -14,8 +14,13 @@
     <div class="row">
 
         <c:forEach items="${recipes}" var="recipe">
-            <div><a>${recipe.name}</a>
-
+            <div>
+                <a>${recipe.id}</a>
+                <a>${recipe.name}</a>
+                <a>${recipe.type}</a>
+                <a>${recipe.timePreparation}, ${recipe.timeRest}, ${recipe.timeCooking}</a>
+                <a>${recipe.difficulty}</a>
+                <a>${recipe.price}</a>
             </div>
         </c:forEach>
 
