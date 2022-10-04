@@ -1,5 +1,7 @@
 package com.example.groupe_1.servlet.recipeCRUD;
 
+import com.example.groupe_1.dao.DaoFactory;
+import com.example.groupe_1.dao.RecipeDao;
 import com.example.groupe_1.entity.Difficulty;
 import com.example.groupe_1.entity.Recipe;
 import com.example.groupe_1.entity.Type;
@@ -18,7 +20,7 @@ public class ReadAllRecipeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RecipeDao recipeDao = DaoFactory.getRecipeDao();
+        RecipeDao recipeDao = DaoFactory.getRecipeDAO();
         List<Recipe> recipeList = recipeDao.findAll();
         req.setAttribute("recipes", recipeList);
 

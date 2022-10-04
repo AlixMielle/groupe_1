@@ -1,5 +1,7 @@
 package com.example.groupe_1.servlet.recipeCRUD;
 
+import com.example.groupe_1.dao.DaoFactory;
+import com.example.groupe_1.dao.RecipeDao;
 import com.example.groupe_1.entity.Difficulty;
 import com.example.groupe_1.entity.Recipe;
 import com.example.groupe_1.entity.Type;
@@ -32,7 +34,7 @@ public class CreateRecipeServlet extends HttpServlet {
         String price = req.getParameter("price");
 
         try{
-            RecipeDao recipeDao = DaoFactory.getRecipeDao();
+            RecipeDao recipeDao = DaoFactory.getRecipeDAO();
             recipeDao.create(new Recipe(
                     Integer.parseInt(id),
                     name,
