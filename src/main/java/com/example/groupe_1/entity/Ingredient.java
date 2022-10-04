@@ -1,12 +1,15 @@
 package com.example.groupe_1.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.NaturalIdCache;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-@Entity
+@Entity(name = "Ingredient")
+@Table(name = "ingredient")
 public class Ingredient {
 
     @Id
@@ -14,20 +17,18 @@ public class Ingredient {
     private int id;
     private String name;
 
-
-    @ManyToMany(mappedBy = "ingredientList")
-    private List<Recipe> recipeList = new ArrayList();
-
-    public List<Recipe> getRecipeList() {
-        return recipeList;
-    }
-
-    public void setRecipeList(List<Recipe> recipeList) {
-        this.recipeList = recipeList;
-    }
+    @OneToMany(
+            mappedBy = "ingredient",
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE},
+            orphanRemoval = true)
+    private List<RecipeIngredient> recipes = new ArrayList();
 
     public Ingredient(int id, String name) {
         this.id = id;
+        this.name = name;
+    }
+
+    public Ingredient(String name) {
         this.name = name;
     }
 
@@ -48,5 +49,13 @@ public class Ingredient {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<RecipeIngredient> getRecipes() {
+        return recipes;
+    }
+
+    public void setRecipes(List<RecipeIngredient> recipes) {
+        this.recipes = recipes;
     }
 }
