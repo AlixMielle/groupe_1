@@ -11,7 +11,7 @@
 
     <div class="row">
 
-        <form method="post" action="${pageContext.request.contextPath}/recipe/add">
+        <form method="post" action="${pageContext.request.contextPath}/recipe/edit">
             <input hidden type="text" id="recipeId" name="recipeId" value="${recipe.id}">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" value="${recipe.name}">
@@ -46,6 +46,8 @@
         </form>
 
     </div>
+
+    <a href="${pageContext.request.contextPath}/recipe/all">Retour</a>
 
 </div>
 </body>

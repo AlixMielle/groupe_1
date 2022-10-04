@@ -21,6 +21,9 @@
                 <a>${recipe.timePreparation}, ${recipe.timeRest}, ${recipe.timeCooking}</a>
                 <a>${recipe.difficulty}</a>
                 <a>${recipe.price}</a>
+                <a href="${pageContext.request.contextPath}/recipe?recipeId=${recipe.id}">Details</a>
+                <a href="${pageContext.request.contextPath}/recipe/edit?recipeId=${recipe.id}">Edit</a>
+                <a href="${pageContext.request.contextPath}/recipe/delete?recipeId=${recipe.id}">Delete</a>
             </div>
         </c:forEach>
 
