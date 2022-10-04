@@ -14,7 +14,7 @@
 
 <!-- header -->
 
-<h1>Login</h1>
+    <h1>Login</h1>
 
 <form method="post"action="${pageContext.request.contextPath}/login">
     <label for="username">Username</label>
