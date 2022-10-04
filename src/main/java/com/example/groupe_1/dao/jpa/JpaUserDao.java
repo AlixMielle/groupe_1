@@ -1,6 +1,7 @@
 package com.example.groupe_1.dao.jpa;
 
 import com.example.groupe_1.dao.UserDao;
+import com.example.groupe_1.entity.User;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
