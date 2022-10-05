@@ -14,64 +14,11 @@
 </head>
 <body>
 
-<header>
-    <nav class="navbar navbar-expand-md navbar-light" style="background-color: #EBB917" id="navbar">
-        <div class="container-md">
-            <a href="${pageContext.request.contextPath}/" class="navbar-brand">
-                <img src="img/logo-60.png" class="img-fluid" alt="logo recipe" id="logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
-                    aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-                <img src="img/icons8-hamburger-24.png" alt="burger menu">
-            </button>
-            <div class="collapse navbar-collapse" id="navbarToggler">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/" style="color: #fff">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/login" style="color: #fff">Connexion</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" style="color: #fff" id="navbarDropdownMenuLink"
-                           role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Profil
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/user/edit" style="color: #EBB917">Éditer</a></li>
-                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/user/delete" style="color: #EBB917">Supprimer</a></li>
-                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/user/profile" style="color: #EBB917">Consulter</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" style="color: #fff" id="navbarDropdownMenuLink"
-                           role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Recettes
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/recipe/add" style="color: #EBB917">Ajouter</a></li>
-                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/recipe/delete" style="color: #EBB917">Supprimer</a></li>
-                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/recipe/edit" style="color: #EBB917">Editer</a></li>
-                            <li><a class="dropdown-item" href="#" style="color: #EBB917">Rechercher</a></li>
-                            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/recipe" style="color: #EBB917">Obtenir</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <img src="img/icons8-search-30.png" alt="search icon" class="img-fluid"
-                                 style=" max-width:90%">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<jsp:include page="/WEB-INF/header.jsp"/>
 
-    <div class="parallax">
-        <p id="motto">Aucune idée pour cuisiner? Bienvenue sur Recipe TP!</p>
-    </div>
-
-</header>
+<div class="parallax">
+    <p id="motto">Aucune idée pour cuisiner? Bienvenue sur Recipe TP!</p>
+</div>
 
 <section id="section1" class="container-fluid bg-light">
     <h3 id="title1" class="text-uppercase text-center">Nos recettes du moment</h3>
@@ -130,7 +77,7 @@
             <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4">
                 <div class="bloc">
                     <div class="img">
-                        <a href="${pageContext.request.contextPath}/recipe/add">
+                        <a href="#">
                             <img src="img/icons8-communication-58.png" alt="exchange">
                         </a>
                     </div>
@@ -140,7 +87,7 @@
             <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4">
                 <div class="bloc">
                     <div class="img">
-                        <a href="${pageContext.request.contextPath}/recipe/add">
+                        <a href="${pageContext.request.contextPath}/auth/recipe/add">
                             <img src="img/icons8-recipe-book-64.png" alt="recipe">
                         </a>
                     </div>

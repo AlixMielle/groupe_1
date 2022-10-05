@@ -9,12 +9,12 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet ("/user/delete")
+@WebServlet ("/auth/user/delete")
 public class DeleteUserProfileServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String idUserStr = req.getParameter("idUser");
+        String idUserStr = req.getParameter("userId");
 
         DaoFactory.getUserDAO().delete(Integer.parseInt(idUserStr));
 

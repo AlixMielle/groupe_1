@@ -8,10 +8,12 @@
           integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 <body>
+<jsp:include page="header.jsp"/>
 
 <h1>Edit user</h1>
 
-<form action="${pageContext.request.contextPath}/user/edit" method="post">
+
+<form action="${pageContext.request.contextPath}/auth/user/edit" method="post">
     <input hidden name="userId" value="${user.id}">
     <label for="firstname">Firstname</label>
     <input type="text" id="firstname" name="firstname">
@@ -39,5 +41,6 @@
     <button type="submit">Edit profile</button>
 </form>
 
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

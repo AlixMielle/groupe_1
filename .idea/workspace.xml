@@ -9,14 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c33a6e3-2dd8-439b-9732-6e435396bf7e" name="Changes" comment="implements login/logout servlets">
+    <list default="true" id="9c33a6e3-2dd8-439b-9732-6e435396bf7e" name="Changes" comment="add userDetails.jsp">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/groupe_1/dao/DaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/groupe_1/dao/DaoFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/groupe_1/dao/RecipeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/groupe_1/dao/RecipeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/groupe_1/dao/jpa/JpaRecipeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/groupe_1/dao/jpa/JpaRecipeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/groupe_1/servlet/recipeCRUD/CreateRecipeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/groupe_1/servlet/recipeCRUD/CreateRecipeServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/groupe_1/servlet/recipeCRUD/ReadAllRecipeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/groupe_1/servlet/recipeCRUD/ReadAllRecipeServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/userDetails.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/userDetails.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature_user" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -74,9 +69,16 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Mes Documents/Desktop/Java Fullstack/tp_recipe_groupe_1/groupe_1/src/main/webapp/WEB-INF&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Mes Documents\Desktop\Java Fullstack\tp_recipe_groupe_1\groupe_1\src\main\webapp\WEB-INF" />
+      <recent name="D:\Mes Documents\Desktop\Java Fullstack\tp_recipe_groupe_1\groupe_1\src\main\webapp" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Tomcat 10.0.23" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.23" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
@@ -126,6 +128,7 @@
       <option name="presentableId" value="Default" />
       <updated>1664825206136</updated>
       <workItem from="1664825207535" duration="326000" />
+      <workItem from="1664960153050" duration="23875000" />
     </task>
     <task id="LOCAL-00001" summary="implements User">
       <created>1664881252667</created>
@@ -155,7 +158,49 @@
       <option name="project" value="LOCAL" />
       <updated>1664895559654</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="implements design">
+      <created>1664982203600</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1664982203600</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add index.jsp">
+      <created>1664982576888</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1664982576888</updated>
+    </task>
+    <task id="LOCAL-00007" summary="implements authFilterServlet">
+      <created>1664984639227</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1664984639227</updated>
+    </task>
+    <task id="LOCAL-00008" summary="implements authFilterServlet">
+      <created>1664984664458</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1664984664458</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add readOneRecipe.jsp">
+      <created>1664991579233</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1664991579233</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add userDetails.jsp">
+      <created>1664993797829</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1664993797829</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,7 +217,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="feature_log" />
+                        <option value="origin/feature-form" />
                       </list>
                     </value>
                   </entry>
@@ -188,6 +233,11 @@
     <MESSAGE value="implements User" />
     <MESSAGE value="implements createUserForm.jsp + editUserForm.jsp" />
     <MESSAGE value="implements login/logout servlets" />
-    <option name="LAST_COMMIT_MESSAGE" value="implements login/logout servlets" />
+    <MESSAGE value="implements design" />
+    <MESSAGE value="add index.jsp" />
+    <MESSAGE value="implements authFilterServlet" />
+    <MESSAGE value="add readOneRecipe.jsp" />
+    <MESSAGE value="add userDetails.jsp" />
+    <option name="LAST_COMMIT_MESSAGE" value="add userDetails.jsp" />
   </component>
 </project>

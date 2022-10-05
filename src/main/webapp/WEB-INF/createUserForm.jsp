@@ -13,9 +13,10 @@
     <script src="js/bootstrap.bundle.min.js" defer></script>
     <script src="js/toTop.js" defer></script>
 </head>
+
 <body class="text-center">
 <!-- header -->
-<jsp:include page="/WEB-INF/header.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/header.jsp"/>
 
 <h1 class="h3 mb-3 fw-normal p-1">Créer un compte</h1>
 
@@ -43,7 +44,7 @@
 </form>
 
 <!-- footer -->
-<jsp:include page="/WEB-INF/footer.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/footer.jsp"/>
 
 </body>
 </html>
