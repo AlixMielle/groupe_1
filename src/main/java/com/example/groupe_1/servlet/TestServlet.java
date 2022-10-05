@@ -18,16 +18,22 @@ public class TestServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         Recipe recipe = new Recipe(0, "pates", Type.PLAT, 23, 3, 9, Difficulty.HARD, 23);
-
         Ingredient banane = new Ingredient(0, "banane");
         Ingredient tomate = new Ingredient(0, "tomate");
         Ingredient fromage = new Ingredient(0, "fromage");
+        recipe.addIngredient(banane, 200);
+        recipe.addIngredient(tomate, 300);
+        recipe.addIngredient(fromage, 600);
 
-        recipe.addIngredient(banane);
-        recipe.addIngredient(tomate);
-        recipe.addIngredient(fromage);
+        Recipe recipe1 = new Recipe(0, "glace", Type.DESSERT, 3, 37, 0, Difficulty.EASY, 10);
+        Ingredient pistache = new Ingredient(0, "pistache");
+        Ingredient fraise = new Ingredient(0, "fraise");
+        recipe.addIngredient(pistache, 100);
+        recipe.addIngredient(fraise, 100);
+
 
         DaoFactory.getRecipeDAO().create(recipe);
+        DaoFactory.getRecipeDAO().create(recipe1);
 
         response.sendRedirect(request.getContextPath() + "/recipe/all");
     }

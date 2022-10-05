@@ -12,13 +12,13 @@ public class RecipeIngredientId implements Serializable {
         private int recipeId;
 
         @Column(name = "ingredient_id")
-        private int ingredientid;
+        private int ingredientId;
 
         public RecipeIngredientId() {
         }
 
         public RecipeIngredientId(int recipeId, int ingredientid) {
             this.recipeId = recipeId;
-            this.ingredientid = ingredientid;
+            this.ingredientId = ingredientid;
         }
 }

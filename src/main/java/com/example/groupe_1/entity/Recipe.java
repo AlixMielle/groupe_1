@@ -134,8 +134,8 @@ public class Recipe {
         this.ingredients = ingredients;
     }
 
-    public void addIngredient(Ingredient ingredient){
-        RecipeIngredient recipeIngredient = new RecipeIngredient(this, ingredient);
+    public void addIngredient(Ingredient ingredient, int qte){
+        RecipeIngredient recipeIngredient = new RecipeIngredient(this, ingredient, qte);
         ingredients.add(recipeIngredient);
         ingredient.getRecipes().add(recipeIngredient);
     }
