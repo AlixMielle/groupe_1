@@ -3,10 +3,7 @@ package com.example.groupe_1.servlet.recipeCRUD;
 import com.example.groupe_1.dao.DaoFactory;
 import com.example.groupe_1.dao.IngredientDao;
 import com.example.groupe_1.dao.RecipeDao;
-import com.example.groupe_1.entity.Difficulty;
-import com.example.groupe_1.entity.Ingredient;
-import com.example.groupe_1.entity.Recipe;
-import com.example.groupe_1.entity.Type;
+import com.example.groupe_1.entity.*;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -55,6 +52,13 @@ public class CreateRecipeServlet extends HttpServlet {
         String ingredient5 = req.getParameter("ingredient5");
         String qte5 = req.getParameter("qte5");
 
+        String[] steps = new String[5];
+        steps[0] = req.getParameter("step1");
+        steps[1] = req.getParameter("step2");
+        steps[2] = req.getParameter("step3");
+        steps[3] = req.getParameter("step4");
+        steps[4] = req.getParameter("step5");
+
 
         try{
             RecipeDao recipeDao = DaoFactory.getRecipeDAO();
@@ -86,6 +90,14 @@ public class CreateRecipeServlet extends HttpServlet {
             if (ingredient5 != null && !qte5.equals("0")){
                 recipe.addIngredient(new Ingredient(0, ingredient5), Integer.parseInt(qte5));
             }
+
+            for (int i=0; i< steps.length; i++) {
+                if(steps[i] != null && !steps[i].equals("")){
+                    RecipeStep step = new RecipeStep(0, i+1, steps[i], recipe);
+                    recipe.addStep(step);
+                }
+            }
+
             recipeDao.create(recipe);
 
         }catch (Exception e){
