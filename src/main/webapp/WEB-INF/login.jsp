@@ -19,12 +19,12 @@
 
 <section id="section1" class="container-fluid bg-light">
     <h1 class="h3 mb-3 fw-normal p-1">Connectez-vous</h1>
-    <div class="container pb-3">
+    <div class="container pb-3 align-items-center">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4">
                 <div class="bloc">
                     <form class="mb-4 p-1" method="post" action="${pageContext.request.contextPath}/login">
-                        <div class="form-floating p-2">
+                        <div class="form-floating p-2 ">
                             <input id="email" type="text" name="email" placeholder="Email">
                         </div>
                         <div class="form-floating p-2">
