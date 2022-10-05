@@ -185,6 +185,7 @@
 </section>
 
 
+<!-- footer -->
 <jsp:include page="/WEB-INF/footer.jsp"></jsp:include>
 
 

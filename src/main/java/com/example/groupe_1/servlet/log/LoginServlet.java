@@ -21,7 +21,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        boolean alreadyLoggedIn = (session != null && session.getAttribute("user") != null);
+        boolean alreadyLoggedIn = (session != null && session.getAttribute("idUser") != null);
         if (alreadyLoggedIn) { //GOTO profile
             res.sendRedirect(req.getContextPath() + "/user/profile");
         } else {
@@ -50,7 +50,7 @@ public class LoginServlet extends HttpServlet {
             Optional<User> userOptional = DaoFactory.getUserDAO().findByLogin(email, password);
             if (userOptional.isPresent()) {
                 req.getSession().setAttribute("userId", userOptional.get().getId());
-                res.sendRedirect((req.getContextPath() + "/user/profile"));
+                res.sendRedirect((req.getContextPath() + "/recipe/all"));
 
                 return;
             } else {
