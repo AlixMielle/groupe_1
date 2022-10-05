@@ -47,6 +47,8 @@
 
     </div>
 
+    <a href="${pageContext.request.contextPath}/recipe/all">Retour</a>
+
 </div>
 </body>
 </html>
