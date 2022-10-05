@@ -4,6 +4,8 @@
     <title>Search recipes</title>
 </head>
 <body>
+<jsp:include page="header.jsp"/>
+
     <div>
         <form method="post" action="${pageContext.request.contextPath}/recipe/search">
             <label for="searchName">Chercher une recette par son nom:</label>
@@ -37,5 +39,7 @@
             <button type="submit">Chercher</button>
         </form>
     </div>
+
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

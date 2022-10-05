@@ -15,7 +15,7 @@
 <body class="text-center">
 
 <!-- header -->
-<jsp:include page="/WEB-INF/header.jsp"></jsp:include>
+<jsp:include page="header.jsp"/>
 
 <section id="section1" class="container-fluid bg-light">
     <h1 class="h3 mb-3 fw-normal p-1">Connectez-vous</h1>
@@ -41,7 +41,9 @@
 </section>
 
 <!-- footer -->
+
 <jsp:include page="footer.jsp"></jsp:include>
+
 
 </body>
 </html>

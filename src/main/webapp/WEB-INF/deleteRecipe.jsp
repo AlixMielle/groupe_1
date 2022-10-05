@@ -5,6 +5,7 @@
     <title>Delete recipe</title>
 </head>
 <body>
+<jsp:include page="header.jsp"/>
 <div class="container">
 
     <h1>Recette à supprimer:</h1>
@@ -29,5 +30,6 @@
     </div>
 
 </div>
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

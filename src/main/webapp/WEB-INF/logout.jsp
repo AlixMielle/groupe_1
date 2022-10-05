@@ -14,7 +14,9 @@
 </head>
 <body>
 <!-- header -->
-<jsp:include page="header.jsp"></jsp:include>
+
+<jsp:include page="header.jsp"/>
+
 
 <section id="section1" class="container-fluid bg-light">
     <div class="h5 mb-3 fw-normal p-1">Etes-vous sûr de vouloir vous déconnecter ?</div>
@@ -38,6 +40,7 @@
 </section>
 
 <!-- footer -->
-<jsp:include page="footer.jsp"></jsp:include>
+<jsp:include page="footer.jsp"/>
+
 </body>
 </html>
