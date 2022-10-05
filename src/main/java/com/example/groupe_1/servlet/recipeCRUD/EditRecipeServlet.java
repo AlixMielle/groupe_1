@@ -61,7 +61,6 @@ public class EditRecipeServlet extends HttpServlet {
             //if edit fails, send back to the edit page for the same recipe (will reload DB data)
             e.printStackTrace();
         }
-
         resp.sendRedirect(req.getContextPath() + "/recipe/all");
     }
 }

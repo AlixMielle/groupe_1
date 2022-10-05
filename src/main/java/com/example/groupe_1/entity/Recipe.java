@@ -5,7 +5,8 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity(name = "Recipe")
+@Table(name = "recipe")
 public class Recipe {
 
     @Id
@@ -22,20 +23,13 @@ public class Recipe {
     @OneToMany(mappedBy = "recipe")
     private List<RecipeStep> steps; //etapes de recette
 
-    @ManyToMany
-    @JoinTable(name = "recipe_ingredient",
-            joinColumns = {@JoinColumn(name = "recipe_id", referencedColumnName = "id")},
-            inverseJoinColumns=
-                    {@JoinColumn(name="ingredient-id", referencedColumnName="id")})
-    private List<Ingredient> ingredientList = new ArrayList<>();
+    @OneToMany(
+            mappedBy = "recipe",
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE},
+            orphanRemoval = true)
+    private List<RecipeIngredient> ingredients = new ArrayList<>();
 
-    public List<Ingredient> getIngredients() {
-        return ingredientList;
-    }
 
-    public void setIngredients(List<Ingredient> ingredients) {
-        this.ingredientList = ingredients;
-    }
 
     //private List<Utensil> utensils; //on ajoute plus tard
     //private User creator; //user who created the recipe
@@ -51,6 +45,10 @@ public class Recipe {
         this.timeCooking = timeCooking;
         this.difficulty = difficulty;
         this.price = price;
+    }
+
+    public Recipe(String name) {
+        this.name = name;
     }
 
     public Recipe() {
@@ -119,8 +117,28 @@ public class Recipe {
     public void setPrice(float price) {
         this.price = price;
     }
-    public void addIngredient(Ingredient ingredient){
-        this.ingredientList.add(ingredient);
-        ingredient.getRecipeList().add(this);
+
+    public List<RecipeStep> getSteps() {
+        return steps;
     }
+
+    public void setSteps(List<RecipeStep> steps) {
+        this.steps = steps;
+    }
+
+    public List<RecipeIngredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(List<RecipeIngredient> ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public void addIngredient(Ingredient ingredient, int qte){
+        RecipeIngredient recipeIngredient = new RecipeIngredient(this, ingredient, qte);
+        ingredients.add(recipeIngredient);
+        ingredient.getRecipes().add(recipeIngredient);
+    }
+
+
 }

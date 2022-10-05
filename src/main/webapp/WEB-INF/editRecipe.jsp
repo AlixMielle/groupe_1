@@ -7,7 +7,7 @@
 <body>
 <div class="container">
 
-    <h1>Add Recipe</h1>
+    <h1>Edit Recipe</h1>
 
     <div class="row">
 
