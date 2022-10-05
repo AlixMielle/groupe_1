@@ -21,10 +21,6 @@
     <p id="motto">Aucune idée pour cuisiner? Bienvenue sur Recipe TP!</p>
 </div>
 
-<button href="${pageContext.request.contextPath}/auth/recipe/add">Créer une recette</button>
-<br>
-<a href="${pageContext.request.contextPath}/testServlet">Populate table</a>
-
 <section id="section1" class="container-fluid bg-light">
     <h3 id="title2" class="text-uppercase text-center">Toutes nos recettes</h3>
     <div class="card-deck container-md p-5">
@@ -49,8 +45,8 @@
                             <a class="d-none"><c:if test="${recipe.difficulty == 'HARD'}">Difficile</c:if></a>
 
                             <a class="d-none">${recipe.price}</a>
-                            <button href="${pageContext.request.contextPath}/auth/recipe/edit?recipeId=${recipe.id}">Modifier</button>
-                            <button href="${pageContext.request.contextPath}/auth/recipe/delete?recipeId=${recipe.id}">Supprimer</button>
+                            <a href="${pageContext.request.contextPath}/auth/recipe/edit?recipeId=${recipe.id}" class="btn btn-primary border-0" style="background-color: #EBB917">Modifier</a>
+                            <a href="${pageContext.request.contextPath}/auth/recipe/delete?recipeId=${recipe.id}" class="btn btn-primary border-0" style="background-color: #EBB917">Supprimer</a>
                             <a href="${pageContext.request.contextPath}/recipe?recipeId=${recipe.id}" class="btn btn-primary border-0" style="background-color: #EBB917">Découvrir</a>
                         </div>
                     </div>
