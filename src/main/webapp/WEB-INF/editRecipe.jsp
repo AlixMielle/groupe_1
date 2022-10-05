@@ -7,19 +7,23 @@
 <body>
 <div class="container">
 
-    <h1>Edit Recipe</h1>
+    <h1>Modifiez la recette</h1>
 
     <div class="row">
 
         <form method="post" action="${pageContext.request.contextPath}/recipe/edit">
             <input hidden type="text" id="recipeId" name="recipeId" value="${recipe.id}">
-            <label for="name">Name:</label>
+            <label for="name">Nom :</label>
             <input type="text" id="name" name="name" value="${recipe.name}">
             <div class="mb-3">
-                <label for="nbPerson">Nombre de personnes:</label>
+                <label for="nbPerson">Nombre de personnes :</label>
                 <input type="number" id="nbPerson" name="nbPerson" value="${recipe.nbPerson}">
             </div>
-            <br>
+            <div class="mb-3">
+                <label for="pictureUrl" class="form-label">Photo :</label>
+                <input id="pictureUrl" type="text" name="pictureUrl" class="form-control" required
+                       value="${recipe.pictureUrl}">
+            </div>
             <label for="timePreparation">Temps de préparation (minutes):</label>
             <input type="number" id="timePreparation" name="timePreparation" value="${recipe.timePreparation}">
             <br>
@@ -34,16 +38,28 @@
             <br>
             <label for="type">Type de plat:</label>
             <select typeof="text" id="type" name="type">
-                <option <c:if test="${recipe.type == 'ENTREE'}">selected</c:if> value="ENTREE">Entrée</option>
-                <option <c:if test="${recipe.type == 'PLAT'}">selected</c:if> value="PLAT">Plat</option>
-                <option <c:if test="${recipe.type == 'DESSERT'}">selected</c:if> value="DESSERT">Dessert</option>
+                <option
+                        <c:if test="${recipe.type == 'ENTREE'}">selected</c:if> value="ENTREE">Entrée
+                </option>
+                <option
+                        <c:if test="${recipe.type == 'PLAT'}">selected</c:if> value="PLAT">Plat
+                </option>
+                <option
+                        <c:if test="${recipe.type == 'DESSERT'}">selected</c:if> value="DESSERT">Dessert
+                </option>
             </select>
             <br>
             <label for="difficulty">Difficulté:</label>
             <select typeof="text" id="difficulty" name="difficulty">
-                <option <c:if test="${recipe.difficulty == 'EASY'}">selected</c:if> value="EASY">Facile</option>
-                <option <c:if test="${recipe.difficulty == 'MEDIUM'}">selected</c:if> value="MEDIUM">Moyen</option>
-                <option <c:if test="${recipe.difficulty == 'HARD'}">selected</c:if> value="HARD">Difficile</option>
+                <option
+                        <c:if test="${recipe.difficulty == 'EASY'}">selected</c:if> value="EASY">Facile
+                </option>
+                <option
+                        <c:if test="${recipe.difficulty == 'MEDIUM'}">selected</c:if> value="MEDIUM">Moyen
+                </option>
+                <option
+                        <c:if test="${recipe.difficulty == 'HARD'}">selected</c:if> value="HARD">Difficile
+                </option>
             </select>
             <br>
             <%--<div class="mb-3">
@@ -102,7 +118,8 @@
                 <label for="qte5" class="form-label">Quantité</label>
                 <input type="number" id="qte5" name="qte5" value="0" step="10">
             </div>--%>
-            <button type="submit">Confirm changes</button>
+            <button type="submit">Modifier</button>
+            <button type="reset">Annuler</button>
         </form>
 
     </div>

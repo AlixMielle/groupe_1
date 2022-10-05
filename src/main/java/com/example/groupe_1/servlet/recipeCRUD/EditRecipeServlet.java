@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
-@WebServlet("/recipe/edit")
+@WebServlet("/auth/recipe/edit")
 public class EditRecipeServlet extends HttpServlet {
 
     @Override
@@ -44,6 +44,7 @@ public class EditRecipeServlet extends HttpServlet {
 
         String id = req.getParameter("recipeId"); //must be the id passed on originally
         String name = req.getParameter("name");
+        String pictureUrl = req.getParameter("pictureUrl");
         String nbPerson = req.getParameter("nbPerson");
         String type = req.getParameter("type");
         String timePreparation = req.getParameter("timePreparation");
@@ -56,6 +57,7 @@ public class EditRecipeServlet extends HttpServlet {
             recipeDao.edit(new Recipe(
                     Integer.parseInt(id),
                     name,
+                    pictureUrl,
                     Integer.parseInt(nbPerson),
                     Type.valueOf(type.toUpperCase()),
                     Integer.parseInt(timePreparation),

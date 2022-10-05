@@ -35,6 +35,7 @@ public class CreateRecipeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String name = req.getParameter("name");
+        String pictureUrl = req.getParameter("pictureUrl");
         String nbPerson = req.getParameter("nbPerson");
         String type = req.getParameter("type");
         String timePreparation = req.getParameter("timePreparation");
@@ -60,6 +61,7 @@ public class CreateRecipeServlet extends HttpServlet {
             Recipe recipe = new Recipe(
                     0, //c'est remplacé automatiquement par le persist donc ça peut être n'importe quoi
                     name,
+                    pictureUrl,
                     Integer.parseInt(nbPerson),
                     Type.valueOf(type.toUpperCase()),
                     Integer.parseInt(timePreparation),
