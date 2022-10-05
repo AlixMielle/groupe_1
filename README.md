@@ -3,7 +3,7 @@
 
 ¤ CRUD recettes complet avec ingrédients* et étapes de préparation
 
-¤ CRUD utilisateurs complet
+¤ Création d'utilisateur avec tous les paramètres demandés et email unique
 
 ¤ Système de login avec filtres
 
@@ -17,8 +17,8 @@
 
 ¤ Les ingrédients sont dupliqués
 
-¤ La jonction many to many est foireuse pour des raisons inconnues.
-Après beaucoup d'efforts cette user story a été déprioritisée pour des raisons de deadline
+¤ La jonction many to many recipe/ingredient est foireuse pour des raisons inconnues.
+Après beaucoup d'efforts cette user story a été déprioritisée pour des raisons de temps.
 
 ¤ Certains edits peuvent ne pas avoir été testés aussi bien qu'ils n'auraient dû.
 
@@ -27,6 +27,8 @@ Après beaucoup d'efforts cette user story a été déprioritisée pour des rais
 ¤ On a pas eu le temps de faire la proposition aléatoire de recette pas faite dans les six jours
 
 ¤ La sélection aléatoire aurait été rapide mais la condition moins de six jours aurait été un sacré bazar
+
+¤ Edit et supression d'utilisateurs non faits.
 
 ### Axes d'améliorations
 
