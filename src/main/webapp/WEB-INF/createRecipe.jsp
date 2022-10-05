@@ -101,7 +101,6 @@
 
             <!--STEPS-->
             <div class="mb-3">
-            <div class="row">
                 <label for="step1" class="form-label">Etape 1:</label>
                 <textarea type="text" id="step1" name="step1" rows="2"
                           placeholder="Saisir la première étape de la recette"></textarea>
@@ -111,15 +110,12 @@
                 <label for="step1" class="form-label">Etape 3:</label>
                 <textarea type="text" id="step3" name="step3" rows="2"
                           placeholder="Saisir la troisième étape de la recette"></textarea>
-            </div>
-            <div class="row">
                 <label for="step1" class="form-label">Etape 4:</label>
                 <textarea type="text" id="step4" name="step4" rows="2"
                           placeholder="Saisir la quatrième étape de la recette"></textarea>
                 <label for="step1" class="form-label">Etape 5:</label>
                 <textarea type="text" id="step5" name="step5" rows="2"
                           placeholder="Saisir la cinquième étape de la recette"></textarea>
-            </div>
             </div>
 
             <!--SUBMIT BUTTON-->
