@@ -33,7 +33,7 @@ Après beaucoup d'efforts cette user story a été déprioritisée pour des rais
 ### Axes d'améliorations
 
 ¤ Le CSS est à paufiner sur pas mal de pages.
-Certaines choses sembles cesser de fonctionner au gré des commit ou bien refusent de marcher de page en page sans raison apparente.
+Certaines choses sembles cesser de fonctionner au gré des commit ou bien refusent de marcher de page en page sans raison apparente. Il semblerait que certains fichiers CSS refusent d'être chargés sur le header de certaines pages (Ce qui signifie qu'il faut repasser par la Home poure revisiter les autres fonctionnalités une fois connecté malheureusement)
 
 ¤ Le lien Edit recette du header est incorrect (ne précise pas la recette à éditer) et renvoie une erreur 500
 
@@ -43,4 +43,8 @@ Certaines choses sembles cesser de fonctionner au gré des commit ou bien refuse
 
 ¤ God bless these women for their skill in CSS this shit might as well be magic to me
 
-¤ Des équipières compétentes et patientes.
+¤ Une équipe compétente et patiente
+
+¤ Des magiciens de la bdd qui ont abattu un travail monstueux, grâce à de nombreuses recherches et de persévérance.
+
+¤ Un TP riche d'apprentissage, de partage de savoirs et de communication, une très bonne entente au sein du groupe et une ambiance très agréable  
