@@ -4,39 +4,46 @@
 <html>
 <head>
     <title>TP Recipe | Create User</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="<c:url value='/css/bootstrap.min.css' />"/>
+    <link rel="stylesheet" href="<c:url value='/css/main.css' />"/>
+    <script src="js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/toTop.js" defer></script>
 </head>
-<body>
+<body class="text-center">
+<!-- header -->
+<jsp:include page="/WEB-INF/header.jsp"></jsp:include>
 
-<h1>Create user</h1>
+<h1 class="h3 mb-3 fw-normal p-1">Créer un compte</h1>
 
-<form action="${pageContext.request.contextPath}/user/add" method="post">
-    <label for="firstname">Firstname</label>
-    <input type="text" id="firstname" name="firstname">
-
-
-    <label for="lastname">Lastname</label>
-    <input type="text" id="lastname" name="lastname">
-
-
-    <label for="username">Username</label>
-    <input type="text" id="username" name="username">
-
-
-    <label for="email">Email</label>
-    <input type="text" id="email" name="email">
-
-
-    <label for="pictureUrl">Picture</label>
-    <input type="text" id="pictureUrl" name="pictureUrl">
-
-
-    <label for="password">Password</label>
-    <input type="text" id="password" name="password">
-
-    <button type="submit">Create profile</button>
+<form class="mb-4 p-1" action="${pageContext.request.contextPath}/user/add" method="post">
+    <div class="form-floating p-2">
+        <input type="text" id="firstname" name="firstname" placeholder="Prénom">
+    </div>
+    <div class="form-floating p-2">
+        <input type="text" id="lastname" name="lastname" placeholder="Nom">
+    </div>
+    <div class="form-floating p-2">
+        <input type="text" id="username" name="username" placeholder="Pseudo">
+    </div>
+    <div class="form-floating p-2">
+        <input type="text" id="email" name="email" placeholder="Email">
+    </div>
+    <div class="form-floating p-2">
+        <input type="text" id="pictureUrl" name="pictureUrl" placeholder="Photo de profil">
+    </div>
+    <div class="form-floating p-2">
+        <input type="password" id="password" name="password" placeholder="Mot de passe">
+    </div>
+    <button class="btn btn-lg p-2" type="submit" style="background-color: #EBB917">Créer un profil</button>
+    <button class="btn btn-lg btn-secondary p-2" type="reset">Annuler</button>
 </form>
+
+<!-- footer -->
+<jsp:include page="/WEB-INF/footer.jsp"></jsp:include>
 
 </body>
 </html>

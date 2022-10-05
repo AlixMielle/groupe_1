@@ -12,8 +12,11 @@
     <script src="js/bootstrap.bundle.min.js" defer></script>
     <script src="js/toTop.js" defer></script>
 </head>
-<body class="text-center">
-    <p class="h5 mb-3 fw-normal p-1">Etes-vous sûr de vouloir vous déconnecter ?</p>
+<body>
+<!-- header -->
+<jsp:include page="/WEB-INF/header.jsp"></jsp:include>
+
+    <div class="h5 mb-3 fw-normal p-1">Etes-vous sûr de vouloir vous déconnecter ?</div>
 
     <div class="row g-3">
         <div class="col-auto">
@@ -29,5 +32,7 @@
         </div>
     </div>
 
+<!-- footer -->
+<jsp:include page="/WEB-INF/footer.jsp"></jsp:include>
 </body>
 </html>
