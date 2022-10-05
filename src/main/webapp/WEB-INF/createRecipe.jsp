@@ -21,7 +21,7 @@
             </div>
             <div class="mb-3">
                 <label for="nbPerson">Nombre de personnes :</label>
-                <input type="number" id="nbPerson" name="nbPerson">
+                <input type="number" id="nbPerson" name="nbPerson" value="1">
             </div>
 
             <div class="mb-3">
@@ -56,6 +56,8 @@
                     <option value="HARD">Difficile</option>
                 </select>
             </div>
+
+            <!--INGREDIENTS-->
             <div class="mb-3">
                 <label for="ingredient1" class="form-label">Ingrédient :</label>
                 <input type="text" id="ingredient1" name="ingredient1" placeholder="Saisissez un ingrédient">
@@ -86,6 +88,30 @@
                 <label for="qte5" class="form-label">Quantité :</label>
                 <input type="number" id="qte5" name="qte5" value="0" step="10">
             </div>
+
+            <!--STEPS-->
+            <div class="mb-3">
+                <label for="step1" class="form-label">Etape 1:</label>
+                <input type="text" id="step1" name="step1" placeholder="Saisir la première étape de la recette">
+            </div>
+            <div class="mb-3">
+                <label for="step2" class="form-label">Etape 2:</label>
+                <input type="text" id="step2" name="step2" placeholder="Saisir la deuxième étape de la recette">
+            </div>
+            <div class="mb-3">
+                <label for="step1" class="form-label">Etape 3:</label>
+                <input type="text" id="step3" name="step3" placeholder="Saisir la troisième étape de la recette">
+            </div>
+            <div class="mb-3">
+                <label for="step1" class="form-label">Etape 4:</label>
+                <input type="text" id="step4" name="step4" placeholder="Saisir la quatrième étape de la recette">
+            </div>
+            <div class="mb-3">
+                <label for="step1" class="form-label">Etape 5:</label>
+                <input type="text" id="step5" name="step5" placeholder="Saisir la cinquième étape de la recette">
+            </div>
+
+            <!--SUBMIT BUTTON-->
             <div class="mb-3">
                 <button type="submit">Créer la recette</button>
                 <button type="reset">Annuler</button>

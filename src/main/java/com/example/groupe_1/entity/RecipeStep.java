@@ -10,7 +10,7 @@ public class RecipeStep {
     private int id;
     private int step; //etape dans la recette: premiere etape, deuxième, etc... distinct de id parce que on va avoir plusieurs première etapes
     private String description;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "recipe_fk")
     private Recipe recipe;
 
