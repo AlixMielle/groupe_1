@@ -1,9 +1,6 @@
 package com.example.groupe_1.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class User {
@@ -17,6 +14,7 @@ public class User {
 
     private String username;
 
+    @Column(unique = true)
     private String email;
 
     private String pictureUrl;

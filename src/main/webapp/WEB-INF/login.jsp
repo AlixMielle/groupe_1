@@ -17,14 +17,16 @@
     <h1>Login</h1>
 
 <form method="post"action="${pageContext.request.contextPath}/login">
-    <label for="username">Username</label>
-    <input id="username" type="text" name="username">
+    <label for="email">Email</label>
+    <input id="email" type="text" name="email">
 
     <label for="password">Password</label>
     <input id="password" type="text" name="password">
     <button type="submit">Sign in</button>
 
 </form>
+
+<a href="${pageContext.request.contextPath}/user/add">Sign in (create user)</a>
 
 <!-- footer -->
 

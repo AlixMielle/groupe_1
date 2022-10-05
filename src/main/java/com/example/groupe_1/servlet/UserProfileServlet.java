@@ -16,12 +16,17 @@ public class UserProfileServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String idUserStr = req.getParameter("idUser");
+        try{
+            int userId = (int)req.getSession().getAttribute("userId");
+            Optional<User> userOptional = DaoFactory.getUserDAO().findOne(userId);
+            if(userOptional.isPresent()){
+                req.setAttribute("user", userOptional.get());
+                req.getRequestDispatcher("/WEB-INF/userDetails.jsp").forward(req, resp);
+            }
+        } catch (Exception e){
+            resp.sendRedirect(req.getContextPath() + "/login");
+        }
 
-        int id = Integer.parseInt(idUserStr);
-        Optional<User> userOptional = DaoFactory.getUserDAO().findOne(id);
-        req.setAttribute("user", userOptional.get());
-        req.getRequestDispatcher("/WEB-INF/userDetails.jsp").forward(req, resp);
     }
 
 }

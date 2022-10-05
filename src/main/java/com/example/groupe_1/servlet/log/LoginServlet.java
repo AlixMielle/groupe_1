@@ -1,5 +1,7 @@
 package com.example.groupe_1.servlet.log;
 
+import com.example.groupe_1.dao.DaoFactory;
+import com.example.groupe_1.entity.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -10,6 +12,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
@@ -18,9 +21,9 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        boolean success = session != null && session.getAttribute("user") != null;
-        if (success) {
-            res.sendRedirect(req.getContextPath() + "/WEB-INF/userDetails.jsp");
+        boolean alreadyLoggedIn = (session != null && session.getAttribute("user") != null);
+        if (alreadyLoggedIn) { //GOTO profile
+            res.sendRedirect(req.getContextPath() + "/user/profile");
         } else {
             req.getRequestDispatcher("/WEB-INF/login.jsp").forward(req, res);
         }
@@ -30,11 +33,11 @@ public class LoginServlet extends HttpServlet {
     // Same reason for redirection path
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String username = req.getParameter("username");
+        String email = req.getParameter("email");
         String password = req.getParameter("password");
         Map<String, String> indication = new HashMap<>();
 
-        if (username == null || username.isEmpty()) {
+        if (email == null || email.isEmpty()) {
             indication.put("username", "Entrez votre nom d'utilisateur");
         }
 
@@ -43,10 +46,12 @@ public class LoginServlet extends HttpServlet {
         }
 
         if (indication.isEmpty()) {
-            // Change username + password?
-            if (username.equals("root") && password.equals("root")) {
-                req.getSession().setAttribute("user", username);
-                res.sendRedirect((req.getContextPath() + "/WEB-INF/userDetails.jsp"));
+
+            Optional<User> userOptional = DaoFactory.getUserDAO().findByLogin(email, password);
+            if (userOptional.isPresent()) {
+                req.getSession().setAttribute("userId", userOptional.get().getId());
+                res.sendRedirect((req.getContextPath() + "/user/profile"));
+
                 return;
             } else {
                 indication.put("login", "Connexion impossible, veuillez réessayer");
