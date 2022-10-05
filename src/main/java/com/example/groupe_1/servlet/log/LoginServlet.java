@@ -20,7 +20,7 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = req.getSession();
         boolean success = session != null && session.getAttribute("user") != null;
         if (success) {
-            res.sendRedirect(req.getContextPath() + "WEB-INF/userDetails.jsp");
+            res.sendRedirect(req.getContextPath() + "/WEB-INF/userDetails.jsp");
         } else {
             req.getRequestDispatcher("/WEB-INF/login.jsp").forward(req, res);
         }
@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
             // Change username + password?
             if (username.equals("root") && password.equals("root")) {
                 req.getSession().setAttribute("user", username);
-                res.sendRedirect((req.getContextPath() + "WEB-INF/userDetails.jsp"));
+                res.sendRedirect((req.getContextPath() + "/WEB-INF/userDetails.jsp"));
                 return;
             } else {
                 indication.put("login", "Connexion impossible, veuillez réessayer");

@@ -17,7 +17,7 @@ public class TestServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        Recipe recipe = new Recipe(0, "pates", Type.PLAT, 23, 3, 9, Difficulty.HARD, 23);
+        Recipe recipe = new Recipe(0, "pates", 3, Type.PLAT, 23, 3, 9, Difficulty.HARD, 23);
         Ingredient banane = new Ingredient(0, "banane");
         Ingredient tomate = new Ingredient(0, "tomate");
         Ingredient fromage = new Ingredient(0, "fromage");
@@ -25,7 +25,7 @@ public class TestServlet extends HttpServlet {
         recipe.addIngredient(tomate, 300);
         recipe.addIngredient(fromage, 600);
 
-        Recipe recipe1 = new Recipe(0, "glace", Type.DESSERT, 3, 37, 0, Difficulty.EASY, 10);
+        Recipe recipe1 = new Recipe(0,  "glace", 2 , Type.DESSERT, 3, 37, 0, Difficulty.EASY, 10);
         Ingredient pistache = new Ingredient(0, "pistache");
         Ingredient fraise = new Ingredient(0, "fraise");
         recipe.addIngredient(pistache, 100);

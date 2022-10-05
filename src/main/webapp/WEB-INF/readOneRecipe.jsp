@@ -17,6 +17,7 @@
             <a>${recipe.difficulty}</a>
             <a>${recipe.price}</a>
             <c:forEach items="${recipe.ingredients}" var="i">
+
                 <a>${i.ingredient.name} : ${i.qte} g</a>
             </c:forEach>
         </div>

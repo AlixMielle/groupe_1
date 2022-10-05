@@ -35,10 +35,8 @@ public class EMFManager {
      * AppListener use it.
      */
     public static void closeEMF() {
-        try {
+        if (EMF_SINGLETON != null && EMF_SINGLETON.isOpen()) {
             EMF_SINGLETON.close();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 }
