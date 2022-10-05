@@ -77,7 +77,7 @@
             <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4">
                 <div class="bloc">
                     <div class="img">
-                        <a href="${pageContext.request.contextPath}/auth/recipe/add">
+                        <a href="#">
                             <img src="img/icons8-communication-58.png" alt="exchange">
                         </a>
                     </div>

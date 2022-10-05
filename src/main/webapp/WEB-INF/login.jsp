@@ -15,7 +15,7 @@
 <body class="text-center">
 
 <!-- header -->
-<jsp:include page="header.jsp"/>
+<jsp:include page="/WEB-INF/header.jsp"/>
 
     <h1 class="h3 mb-3 fw-normal p-1">Connectez-vous</h1>
 
@@ -32,7 +32,7 @@
 </button>
 
 <!-- footer -->
-<jsp:include page="footer.jsp"/>
+<jsp:include page="/WEB-INF/footer.jsp"/>
 
 </body>
 </html>
