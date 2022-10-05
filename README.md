@@ -35,6 +35,8 @@ Après beaucoup d'efforts cette user story a été déprioritisée pour des rais
 ¤ Le CSS est à paufiner sur pas mal de pages.
 Certaines choses sembles cesser de fonctionner au gré des commit ou bien refusent de marcher de page en page sans raison apparente.
 
+¤ Le lien Edit recette du header est incorrect (ne précise pas la recette à éditer) et renvoie une erreur 500
+
 ### Commentaires sur équipiers
 
 ¤ Manon a fait preuve d'une persévérance louable face à des bugs qui n'ont cessé de remettre à zéro son progrès.
