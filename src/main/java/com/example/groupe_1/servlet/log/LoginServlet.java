@@ -21,7 +21,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        boolean alreadyLoggedIn = (session != null && session.getAttribute("user") != null);
+        boolean alreadyLoggedIn = (session != null && session.getAttribute("userId") != null);
         if (alreadyLoggedIn) { //GOTO profile
             res.sendRedirect(req.getContextPath() + "/user/profile");
         } else {

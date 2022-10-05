@@ -11,7 +11,7 @@
 
     <div class="row">
 
-        <form method="post" action="${pageContext.request.contextPath}/recipe/edit">
+        <form method="post" action="${pageContext.request.contextPath}/auth/recipe/edit">
             <input hidden type="text" id="recipeId" name="recipeId" value="${recipe.id}">
             <label for="name">Nom :</label>
             <input type="text" id="name" name="name" value="${recipe.name}">

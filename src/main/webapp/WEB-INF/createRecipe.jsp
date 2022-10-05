@@ -10,7 +10,7 @@
     <h1>Créez votre recette !</h1>
 
     <div class="row">
-        <form method="post" action="${pageContext.request.contextPath}/recipe/add">
+        <form method="post" action="${pageContext.request.contextPath}/auth/recipe/add">
             <div class="mb-3">
                 <label for="name">Titre de la recette :</label>
                 <input type="text" id="name" name="name" required>

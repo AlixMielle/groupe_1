@@ -15,7 +15,7 @@ public class AuthFilterServlet implements Filter{
         HttpServletRequest req = (HttpServletRequest) servletRequest;
         HttpServletResponse resp = (HttpServletResponse) servletResponse;
 
-        Object userLogin = req.getSession().getAttribute("idUser");
+        Object userLogin = req.getSession().getAttribute("userId");
         if (userLogin != null) {
             chain.doFilter(req, resp);
         } else {

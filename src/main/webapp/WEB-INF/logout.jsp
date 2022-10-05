@@ -21,7 +21,7 @@
   <button type="submit">Yes</button>
 </form>
 
-<form action="${pageContext.request.contextPath}/user/profile" method="get">
+<form action="${pageContext.request.contextPath}/auth/user/profile" method="get">
   <button type="submit">Stay connected</button>
 </form>
 
