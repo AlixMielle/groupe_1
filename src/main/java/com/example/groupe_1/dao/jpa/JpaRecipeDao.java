@@ -1,7 +1,9 @@
 package com.example.groupe_1.dao.jpa;
 
 import com.example.groupe_1.dao.RecipeDao;
+import com.example.groupe_1.entity.Difficulty;
 import com.example.groupe_1.entity.Recipe;
+import com.example.groupe_1.entity.Type;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
@@ -26,6 +28,57 @@ public class JpaRecipeDao implements RecipeDao {
         EntityManager em = emf.createEntityManager();
         try {
             recipeList = em.createQuery("select r from Recipe r", Recipe.class)
+                    .getResultList();
+        } catch (RuntimeException re) {
+            re.printStackTrace();
+        } finally {
+            em.close();
+        }
+        return recipeList;
+    }
+
+    @Override
+    public List<Recipe> findByPartialName(String searchWord){
+        List<Recipe> recipeList = new ArrayList<>();
+        EntityManagerFactory emf = EMFManager.getEMF();
+        EntityManager em = emf.createEntityManager();
+        try {
+            recipeList = em.createQuery("select r from Recipe r WHERE r.name LIKE :searchWord", Recipe.class)
+                    .setParameter("searchWord", "%" + searchWord + "%")
+                    .getResultList();
+        } catch (RuntimeException re) {
+            re.printStackTrace();
+        } finally {
+            em.close();
+        }
+        return recipeList;
+    }
+
+    @Override
+    public List<Recipe> findByType(Type type){
+        List<Recipe> recipeList = new ArrayList<>();
+        EntityManagerFactory emf = EMFManager.getEMF();
+        EntityManager em = emf.createEntityManager();
+        try {
+            recipeList = em.createQuery("select r from Recipe r WHERE r.type = :type", Recipe.class)
+                    .setParameter("type", type)
+                    .getResultList();
+        } catch (RuntimeException re) {
+            re.printStackTrace();
+        } finally {
+            em.close();
+        }
+        return recipeList;
+    }
+
+    @Override
+    public List<Recipe> findByDifficulty(Difficulty difficulty){
+        List<Recipe> recipeList = new ArrayList<>();
+        EntityManagerFactory emf = EMFManager.getEMF();
+        EntityManager em = emf.createEntityManager();
+        try {
+            recipeList = em.createQuery("select r from Recipe r WHERE r.difficulty = :difficulty", Recipe.class)
+                    .setParameter("difficulty", difficulty)
                     .getResultList();
         } catch (RuntimeException re) {
             re.printStackTrace();
