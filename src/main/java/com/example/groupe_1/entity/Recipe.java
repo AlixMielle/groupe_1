@@ -13,6 +13,8 @@ public class Recipe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+
+    private String pictureUrl;
     private Type type; //en enum, on peut rajouter autant qu'on veut
     private int timePreparation; //temps de preparation en minutes (conversion en hh:mm dans le jsp?)
     private int timeRest;
@@ -39,9 +41,10 @@ public class Recipe {
     //private Date dateAdded; //date de creation de la recette
 
 
-    public Recipe(int id, String name, int nbPerson, Type type, int timePreparation, int timeRest, int timeCooking, Difficulty difficulty, float price) {
+    public Recipe(int id, String name, String pictureUrl, int nbPerson, Type type, int timePreparation, int timeRest, int timeCooking, Difficulty difficulty, float price) {
         this.id = id;
         this.name = name;
+        this.pictureUrl = pictureUrl;
         this.nbPerson = nbPerson;
         this.type = type;
         this.timePreparation = timePreparation;
@@ -72,6 +75,14 @@ public class Recipe {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 
     public Type getType() {

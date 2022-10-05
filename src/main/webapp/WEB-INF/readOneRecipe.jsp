@@ -12,18 +12,19 @@
         <div>
             <a>${recipe.id}</a>
             <a>${recipe.name}</a>
+            <img src="${recipe.pictureUrl}" alt="photo">
+            <a>${recipe.nbPerson}</a>
             <a>${recipe.type}</a>
             <a>${recipe.timePreparation}, ${recipe.timeRest}, ${recipe.timeCooking}</a>
             <a>${recipe.difficulty}</a>
             <a>${recipe.price}</a>
             <c:forEach items="${recipe.ingredients}" var="i">
-
                 <a>${i.ingredient.name} : ${i.qte} g</a>
             </c:forEach>
         </div>
 
-    <a href="${pageContext.request.contextPath}/recipe/edit?recipeId=${recipe.id}">Edit</a>
-    <a href="${pageContext.request.contextPath}/recipe/delete?recipeId=${recipe.id}">Delete</a>
+    <a href="${pageContext.request.contextPath}/recipe/edit?recipeId=${recipe.id}">Modifier</a>
+    <a href="${pageContext.request.contextPath}/recipe/delete?recipeId=${recipe.id}">Supprimer</a>
     <a href="${pageContext.request.contextPath}/recipe/all">Retour</a>
 
 </div>

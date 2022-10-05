@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Optional;
 
-@WebServlet("/recipe/delete")
+@WebServlet("/auth/recipe/delete")
 public class DeleteRecipeServlet extends HttpServlet {
 
     @Override

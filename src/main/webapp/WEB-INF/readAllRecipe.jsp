@@ -9,7 +9,7 @@
 
     <h1>Recettes</h1>
 
-    <a href="${pageContext.request.contextPath}/recipe/add">Ajoute une recette</a>
+    <a href="${pageContext.request.contextPath}/recipe/add">Créer une recette</a>
     <br>
     <a href="${pageContext.request.contextPath}/testServlet">Populate table</a>
 
@@ -19,8 +19,8 @@
             <div>
                 <a>${recipe.id}</a>
                 <a>${recipe.name}</a>
+                <img src="${recipe.pictureUrl}" alt="photo">
                 <a>${recipe.nbPerson}</a>
-
 
                 <a><c:if test="${recipe.type == 'ENTREE'}">Entrée</c:if></a>
                 <a><c:if test="${recipe.type == 'PLAT'}">Plat</c:if></a>
@@ -33,13 +33,11 @@
                 <a><c:if test="${recipe.difficulty == 'HARD'}">Difficile</c:if></a>
 
                 <a>${recipe.price}</a>
-                <a href="${pageContext.request.contextPath}/recipe?recipeId=${recipe.id}">Details</a>
-                <a href="${pageContext.request.contextPath}/recipe/edit?recipeId=${recipe.id}">Edit</a>
-                <a href="${pageContext.request.contextPath}/recipe/delete?recipeId=${recipe.id}">Delete</a>
+                <a href="${pageContext.request.contextPath}/recipe?recipeId=${recipe.id}">Découvrir</a>
+                <a href="${pageContext.request.contextPath}/recipe/edit?recipeId=${recipe.id}">Modifier</a>
+                <a href="${pageContext.request.contextPath}/recipe/delete?recipeId=${recipe.id}">Supprimer</a>
             </div>
         </c:forEach>
-
-        <%--ITEM ISLAND--%>
 
 
     </div>
