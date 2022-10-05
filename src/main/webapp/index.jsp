@@ -17,7 +17,7 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-light" style="background-color: #EBB917" id="navbar">
         <div class="container-md">
-            <a href="${pageContext.request.contextPath}/" class="navbar-brand">
+            <a href="${pageContext.request.contextPath}/recipe/search?searchBy=name&searchTerm=pat" class="navbar-brand">
                 <img src="img/logo-60.png" class="img-fluid" alt="logo recipe" id="logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
