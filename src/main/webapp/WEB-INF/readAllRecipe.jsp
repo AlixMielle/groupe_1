@@ -10,6 +10,8 @@
     <h1>Recettes</h1>
 
     <a href="${pageContext.request.contextPath}/recipe/add">Ajoute une recette</a>
+    <br>
+    <a href="${pageContext.request.contextPath}/testServlet">Populate table</a>
 
     <div class="row">
 
