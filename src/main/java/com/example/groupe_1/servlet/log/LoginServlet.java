@@ -50,7 +50,7 @@ public class LoginServlet extends HttpServlet {
             Optional<User> userOptional = DaoFactory.getUserDAO().findByLogin(email, password);
             if (userOptional.isPresent()) {
                 req.getSession().setAttribute("userId", userOptional.get().getId());
-                res.sendRedirect((req.getContextPath() + "/user/profile"));
+                res.sendRedirect((req.getContextPath() + "/recipe/all"));
 
                 return;
             } else {
