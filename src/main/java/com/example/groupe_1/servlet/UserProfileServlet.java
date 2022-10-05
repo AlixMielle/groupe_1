@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Optional;
 
-@WebServlet ("/user/profile")
+@WebServlet ("/auth/user/profile")
 public class UserProfileServlet extends HttpServlet {
 
     @Override

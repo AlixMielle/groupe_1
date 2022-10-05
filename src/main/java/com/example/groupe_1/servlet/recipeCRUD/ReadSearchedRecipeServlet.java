@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/recipe/search")
+@WebServlet("/recipe/search/results")
 public class ReadSearchedRecipeServlet extends HttpServlet {
 
     @Override
@@ -27,21 +27,21 @@ public class ReadSearchedRecipeServlet extends HttpServlet {
         RecipeDao recipeDao = DaoFactory.getRecipeDAO();
         List<Recipe> recipeList;
 
-        switch (searchBy){
+        switch (searchBy) {
             case "name":
                 recipeList = recipeDao.findByPartialName(searchTerm);
                 break;
             case "type":
-                try{
+                try {
                     recipeList = recipeDao.findByType(Type.valueOf(searchTerm.toUpperCase()));
-                } catch (Exception e){
+                } catch (Exception e) {
                     recipeList = recipeDao.findAll();
                 }
                 break;
             case "difficulty":
-                try{
+                try {
                     recipeList = recipeDao.findByDifficulty(Difficulty.valueOf(searchTerm.toUpperCase()));
-                } catch (Exception e){
+                } catch (Exception e) {
                     recipeList = recipeDao.findAll();
                 }
                 break;

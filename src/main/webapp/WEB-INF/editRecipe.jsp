@@ -23,7 +23,7 @@
 
     <div class="row">
 
-        <form class="mb-6 p-1" method="post" action="${pageContext.request.contextPath}/recipe/edit">
+        <form class="mb-6 p-1" method="post" action="${pageContext.request.contextPath}/auth/recipe/edit">
             <input hidden type="text" id="recipeId" name="recipeId" value="${recipe.id}">
             <div class="col-4">
                 <label for="name">Titre de la recette :</label>

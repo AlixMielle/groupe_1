@@ -1,5 +1,6 @@
 package com.example.groupe_1.filter;
 
+import com.example.groupe_1.dao.DaoFactory;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
@@ -7,19 +8,18 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebFilter("/auth/*")
-public class AuthFilterServlet implements Filter{
+@WebFilter("/index.jsp")
+public class PopulateFilterServlet implements Filter{
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) servletRequest;
         HttpServletResponse resp = (HttpServletResponse) servletResponse;
 
-        Object userLogin = req.getSession().getAttribute("userId");
-        if (userLogin != null) {
-            chain.doFilter(req, resp);
+        if (DaoFactory.getRecipeDAO().findAll().isEmpty()) {
+            resp.sendRedirect(req.getContextPath() + "/testServlet");
         } else {
-            resp.sendRedirect(req.getContextPath() + "/login");
+            chain.doFilter(req, resp);
         }
     }
 }

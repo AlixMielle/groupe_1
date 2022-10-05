@@ -11,7 +11,7 @@
 
 <h1>Edit user</h1>
 
-<form action="${pageContext.request.contextPath}/user/edit" method="post">
+<form action="${pageContext.request.contextPath}/auth/user/edit" method="post">
     <input hidden name="userId" value="${user.id}">
     <label for="firstname">Firstname</label>
     <input type="text" id="firstname" name="firstname">

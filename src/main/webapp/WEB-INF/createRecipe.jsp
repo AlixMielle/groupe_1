@@ -22,7 +22,7 @@
     <h1 class="h3 mb-3 fw-normal pt-2 text-center">Créez votre recette !</h1>
 
     <div class="row">
-        <form class="mb-6 p-1" method="post" action="${pageContext.request.contextPath}/recipe/add">
+        <form class="mb-6 p-1" method="post" action="${pageContext.request.contextPath}/auth/recipe/add>
             <div class="row mb-3 ">
                 <div class="col-4">
                     <label for="name">Titre de la recette :</label>
@@ -41,7 +41,7 @@
                 <div class="col-4">
                     <label for="timePreparation">Temps de préparation :</label>
                     <input type="number" id="timePreparation" name="timePreparation" value="0" min="0">
-                </div>
+                </div> 
             </div>
 
             <div class="row mb-3">

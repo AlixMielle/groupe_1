@@ -9,7 +9,7 @@
 
     <h1>Recettes</h1>
 
-    <a href="${pageContext.request.contextPath}/recipe/add">Créer une recette</a>
+    <a href="${pageContext.request.contextPath}/auth/recipe/add">Créer une recette</a>
     <br>
     <a href="${pageContext.request.contextPath}/testServlet">Populate table</a>
 
@@ -34,8 +34,8 @@
 
                 <a>${recipe.price}</a>
                 <a href="${pageContext.request.contextPath}/recipe?recipeId=${recipe.id}">Découvrir</a>
-                <a href="${pageContext.request.contextPath}/recipe/edit?recipeId=${recipe.id}">Modifier</a>
-                <a href="${pageContext.request.contextPath}/recipe/delete?recipeId=${recipe.id}">Supprimer</a>
+                <a href="${pageContext.request.contextPath}/auth/recipe/edit?recipeId=${recipe.id}">Modifier</a>
+                <a href="${pageContext.request.contextPath}/auth/recipe/delete?recipeId=${recipe.id}">Supprimer</a>
             </div>
         </c:forEach>
 
