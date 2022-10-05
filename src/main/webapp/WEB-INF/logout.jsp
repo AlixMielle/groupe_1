@@ -14,25 +14,30 @@
 </head>
 <body>
 <!-- header -->
-<jsp:include page="/WEB-INF/header.jsp"></jsp:include>
+<jsp:include page="header.jsp"></jsp:include>
 
+<section id="section1" class="container-fluid bg-light">
     <div class="h5 mb-3 fw-normal p-1">Etes-vous sûr de vouloir vous déconnecter ?</div>
-
-    <div class="row g-3">
-        <div class="col-auto">
-            <form action="${pageContext.request.contextPath}/logout" method="post">
-                <input hidden value="${userId}" name="userId">
-                <button class="btn btn-lg p-2" type="submit" style="background-color: #EBB917">Se déconnecter</button>
-            </form>
-        </div>
-        <div class="col-auto">
-            <form action="${pageContext.request.contextPath}/auth/user/profile" method="get">
-                <button class="btn btn-lg p-2 btn-secondary" type="submit">Annuler</button>
-            </form>
+    <div class="container pb-3">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4">
+                <div class="bloc">
+                    <form action="${pageContext.request.contextPath}/logout" method="post">
+                        <input hidden value="${userId}" name="userId">
+                        <button class="btn btn-lg p-2" type="submit" style="background-color: #EBB917">Se déconnecter</button>
+                    </form>
+                </div>
+                <div class="col-auto">
+                    <form action="${pageContext.request.contextPath}/auth/user/profile" method="get">
+                        <button class="btn btn-lg p-2 btn-secondary" type="submit">Annuler</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
+</section>
 
 <!-- footer -->
-<jsp:include page="/WEB-INF/footer.jsp"></jsp:include>
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
