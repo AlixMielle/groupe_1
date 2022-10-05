@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<jsp:include page="/WEB-INF/header.jsp"></jsp:include>
+<jsp:include page="header.jsp"/>
 
 <section id="section1" class="container-fluid overflow-hidden">
     <h3 id="title2" class="text-uppercase text-center">${recipe.name}</h3>
@@ -87,7 +87,7 @@
     </div>
 </section>
 
-<jsp:include page="/WEB-INF/footer.jsp"></jsp:include>
+<jsp:include page="footer.jsp"/>
 
 </body>
 </html>

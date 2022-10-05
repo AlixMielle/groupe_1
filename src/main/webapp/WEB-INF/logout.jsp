@@ -14,7 +14,7 @@
 </head>
 <body>
 <!-- header -->
-<jsp:include page="/WEB-INF/header.jsp"></jsp:include>
+<jsp:include page="header.jsp"/>
 
     <div class="h5 mb-3 fw-normal p-1">Etes-vous sûr de vouloir vous déconnecter ?</div>
 
@@ -33,6 +33,6 @@
     </div>
 
 <!-- footer -->
-<jsp:include page="/WEB-INF/footer.jsp"></jsp:include>
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

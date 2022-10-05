@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<jsp:include page="/WEB-INF/header.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/header.jsp"/>
 
 <div class="parallax">
     <p id="motto">Aucune idée pour cuisiner? Bienvenue sur Recipe TP!</p>
