@@ -26,8 +26,8 @@
             </c:forEach>
         </div>
 
-    <a href="${pageContext.request.contextPath}/recipe/edit?recipeId=${recipe.id}">Modifier</a>
-    <a href="${pageContext.request.contextPath}/recipe/delete?recipeId=${recipe.id}">Supprimer</a>
+    <a href="${pageContext.request.contextPath}/auth/recipe/edit?recipeId=${recipe.id}">Modifier</a>
+    <a href="${pageContext.request.contextPath}/auth/recipe/delete?recipeId=${recipe.id}">Supprimer</a>
     <a href="${pageContext.request.contextPath}/recipe/all">Retour</a>
 
 </div>

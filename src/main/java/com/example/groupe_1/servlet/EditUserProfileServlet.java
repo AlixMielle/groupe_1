@@ -11,26 +11,27 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Optional;
 
-@WebServlet("/user/edit")
+@WebServlet("/auth/user/edit")
 public class EditUserProfileServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String idStr = req.getParameter("id");
-        Optional<User> user = DaoFactory.getUserDAO().findOne(Integer.parseInt(idStr));
-        if (user.isPresent()) {
-            req.setAttribute("user", user.get());
-            req.getRequestDispatcher("/WEB-INF/editUserForm.jsp").forward(req, resp);
-        } else {
-            resp.sendRedirect(req.getContextPath() + "/user/profile");
+        try{
+            int userId = (int)req.getSession().getAttribute("userId");
+            Optional<User> userOptional = DaoFactory.getUserDAO().findOne(userId);
+            if(userOptional.isPresent()){
+                req.setAttribute("user", userOptional.get());
+                req.getRequestDispatcher("/WEB-INF/editUserForm.jsp").forward(req, resp);
+            }
+        } catch (Exception e){
+            resp.sendRedirect(req.getContextPath() + "/login");
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String idStr = req.getParameter("id");
 
-        int id = Integer.parseInt(idStr);
+        int id = Integer.parseInt(req.getParameter("id"));
         String firstname = req.getParameter("firstname");
         String lastname = req.getParameter("lastname");
         String username = req.getParameter("username");
@@ -40,7 +41,7 @@ public class EditUserProfileServlet extends HttpServlet {
 
         DaoFactory.getUserDAO().edit(new User(id, firstname, lastname, username, email, pictureUrl, password));
 
-        resp.sendRedirect(req.getContextPath() + "/user/profile");
+        resp.sendRedirect(req.getContextPath() + "/auth/user/profile");
     }
 
 }

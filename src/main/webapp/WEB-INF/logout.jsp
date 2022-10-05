@@ -26,7 +26,7 @@
             </form>
         </div>
         <div class="col-auto">
-            <form action="${pageContext.request.contextPath}/user/profile" method="get">
+            <form action="${pageContext.request.contextPath}/auth/user/profile" method="get">
                 <button class="btn btn-lg p-2 btn-secondary" type="submit">Annuler</button>
             </form>
         </div>
