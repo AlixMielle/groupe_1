@@ -17,22 +17,33 @@
 <!-- header -->
 <jsp:include page="header.jsp"/>
 
+<section id="section1" class="container-fluid bg-light">
     <h1 class="h3 mb-3 fw-normal p-1">Connectez-vous</h1>
-
-<form class="mb-4 p-1" method="post" action="${pageContext.request.contextPath}/login">
-    <div class="form-floating p-2">
-        <input id="email" type="text" name="email" placeholder="Email">
+    <div class="container pb-3">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4">
+                <div class="bloc">
+                    <form class="mb-4 p-1" method="post" action="${pageContext.request.contextPath}/login">
+                        <div class="form-floating p-2">
+                            <input id="email" type="text" name="email" placeholder="Email">
+                        </div>
+                        <div class="form-floating p-2">
+                            <input id="password" type="password" name="password" placeholder="Mot de passe">
+                        </div>
+                        <button class="btn btn-lg p-2" type="submit" style="background-color: #EBB917">Se connecter</button>
+                    </form>
+                    <button class="btn btn-lg p-2"><a href="${pageContext.request.contextPath}/user/add">Créez un compte</a>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="form-floating p-2">
-        <input id="password" type="password" name="password" placeholder="Mot de passe">
-    </div>
-    <button class="btn btn-lg p-2" type="submit" style="background-color: #EBB917">Se connecter</button>
-</form>
-<button class="btn btn-lg p-2"><a href="${pageContext.request.contextPath}/user/add">Créez un compte</a>
-</button>
+</section>
 
 <!-- footer -->
-<jsp:include page="footer.jsp"/>
+
+<jsp:include page="footer.jsp"></jsp:include>
+
 
 </body>
 </html>
