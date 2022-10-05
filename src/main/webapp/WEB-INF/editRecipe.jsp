@@ -147,14 +147,17 @@
                 <label for="qte5" class="form-label">Quantité</label>
                 <input type="number" id="qte5" name="qte5" value="0" step="10">
             </div>--%>
-            <button type="submit">Modifier</button>
-            <button type="reset">Annuler</button>
+            <!--SUBMIT BUTTON-->
+            <div class="mb-3 p-2">
+                <button class="btn btn-lg p-2" type="submit" style="background-color: #EBB917">Modifier la recette</button>
+                <button class="btn btn-lg btn-secondary p-2" type="reset">Annuler</button>
+            </div>
         </form>
-
+        <a class="h6 mb-3 fw-normal" href="${pageContext.request.contextPath}/recipe/all">Retour</a>
     </div>
-
-    <a href="${pageContext.request.contextPath}/recipe/all">Retour</a>
-
 </div>
-</body>
+
+<!-- footer -->
+<jsp:include page="/WEB-INF/footer.jsp"></jsp:include>
+
 </html>
