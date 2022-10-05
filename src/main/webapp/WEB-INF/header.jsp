@@ -57,12 +57,12 @@
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/auth/recipe/delete" style="color: #EBB917">Supprimer</a></li>
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/auth/recipe/edit" style="color: #EBB917">Editer</a></li>
               </c:if>
-              <li><a class="dropdown-item" href="#" style="color: #EBB917">Rechercher</a></li>
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/recipe/search" style="color: #EBB917">Rechercher</a></li>
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/recipe/all" style="color: #EBB917">Explorer</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="${pageContext.request.contextPath}/recipe/search">
               <img src="img/icons8-search-30.png" alt="search icon" class="img-fluid"
                    style=" max-width:90%">
             </a>
