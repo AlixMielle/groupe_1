@@ -38,7 +38,7 @@ public class EditRecipeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String id = req.getParameter("id"); //must be the id passed on originally
+        String id = req.getParameter("recipeId"); //must be the id passed on originally
         String name = req.getParameter("name");
         String type = req.getParameter("type");
         String timePreparation = req.getParameter("timePreparation");
@@ -59,9 +59,9 @@ public class EditRecipeServlet extends HttpServlet {
             ));
         }catch (Exception e){
             //if edit fails, send back to the edit page for the same recipe (will reload DB data)
-            resp.sendRedirect(req.getContextPath() + "/recipe/edit?recipeId=" + id);
+            e.printStackTrace();
         }
         //if edit succeeds, send back to the details page for that recipe
-        resp.sendRedirect(req.getContextPath() + "/recipe?recipeId=" + id);
+        resp.sendRedirect(req.getContextPath() + "/recipe/all");
     }
 }

@@ -16,6 +16,9 @@
             <a>${recipe.timePreparation}, ${recipe.timeRest}, ${recipe.timeCooking}</a>
             <a>${recipe.difficulty}</a>
             <a>${recipe.price}</a>
+            <c:forEach items="${recipe.ingredient}" var="ingredient">
+                <a>${ingredient.name} : ${ingredient.qte} g</a>
+            </c:forEach>
         </div>
 
 </div>
