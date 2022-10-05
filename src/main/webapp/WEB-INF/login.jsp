@@ -19,7 +19,7 @@
 
     <h1 class="h3 mb-3 fw-normal p-1">Connectez-vous</h1>
 
-<form class="mb-4 p-1" method="post"action="${pageContext.request.contextPath}/login">
+<form class="mb-4 p-1" method="post" action="${pageContext.request.contextPath}/login">
     <div class="form-floating p-2">
         <input id="email" type="text" name="email" placeholder="Email">
     </div>
