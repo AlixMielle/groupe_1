@@ -33,7 +33,7 @@ Après beaucoup d'efforts cette user story a été déprioritisée pour des rais
 ### Axes d'améliorations
 
 ¤ Le CSS est à paufiner sur pas mal de pages.
-Certaines choses sembles cesser de fonctionner au gré des commit ou bien refusent de marcher de page en page sans raison apparente. Il semblerait que certains fichiers CSS refusent d'être chargés sur le header de certaines pages (Ce qui signifie qu'il faut repasser par la Home poure revisiter les autres fonctionnalités une fois connecté malheureusement)
+Certaines choses sembles cesser de fonctionner au gré des commit ou bien refusent de marcher de page en page sans raison apparente. Il semblerait que certains fichiers CSS refusent d'être chargés sur le header de certaines pages (Ce qui signifie qu'il faut repasser par la Home pour revisiter les autres fonctionnalités une fois connecté malheureusement)
 
 ¤ Le lien Edit recette du header est incorrect (ne précise pas la recette à éditer) et renvoie une erreur 500
 
