@@ -27,12 +27,13 @@
       <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#" style="color: #fff">Home</a>
+            <a class="nav-link" href="${pageContext.request.contextPath}/" style="color: #fff">Home</a>
           </li>
           <li class="nav-item">
             <c:if test="${empty sessionScope.userId}"><a class="nav-link" href="${pageContext.request.contextPath}/login" style="color: #fff">Connexion</a></c:if>
             <c:if test="${!empty sessionScope.userId}"><a class="nav-link" href="${pageContext.request.contextPath}/logout" style="color: #fff">Déconnexion</a></c:if>
           </li>
+          <c:if test="${!empty sessionScope.userId}">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" style="color: #fff" id="navbarDropdownMenuLink"
                role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,17 +45,20 @@
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/auth/user/profile" style="color: #EBB917">Consulter</a></li>
             </ul>
           </li>
+          </c:if>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" style="color: #fff" id="navbarDropdownMenuLink"
                role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Recettes
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <c:if test="${!empty sessionScope.userId}">
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/auth/recipe/add" style="color: #EBB917">Ajouter</a></li>
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/auth/recipe/delete" style="color: #EBB917">Supprimer</a></li>
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/auth/recipe/edit" style="color: #EBB917">Editer</a></li>
+              </c:if>
               <li><a class="dropdown-item" href="#" style="color: #EBB917">Rechercher</a></li>
-              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/recipe" style="color: #EBB917">Obtenir</a></li>
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/recipe/all" style="color: #EBB917">Explorer</a></li>
             </ul>
           </li>
           <li class="nav-item">
