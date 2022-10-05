@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/recipe/add")
+@WebServlet("/auth/recipe/add")
 public class CreateRecipeServlet extends HttpServlet {
 
     @Override
