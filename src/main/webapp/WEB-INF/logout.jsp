@@ -16,7 +16,7 @@
 <p>Are you sure you want to log out?</p>
 
 
-<form action="${pageContext.request.contextPath}/leave" method="post">
+<form action="${pageContext.request.contextPath}/logout" method="post">
   <input hidden value="${userId}" name="userId">
   <button type="submit">Yes</button>
 </form>

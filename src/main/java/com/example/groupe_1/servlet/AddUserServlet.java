@@ -23,9 +23,7 @@ public class AddUserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String idUserStr = req.getParameter("idUser");
 
-        int id = Integer.parseInt(idUserStr);
         String firstname = req.getParameter("firstname");
         String lastname = req.getParameter("lastname");
         String username = req.getParameter("username");
@@ -34,8 +32,8 @@ public class AddUserServlet extends HttpServlet {
         String password = req.getParameter("password");
 
         UserDao userDao = DaoFactory.getUserDAO();
-        userDao.create(new User(id, firstname, lastname, username, email, pictureUrl, password));
+        userDao.create(new User(0, firstname, lastname, username, email, pictureUrl, password));
 
-        resp.sendRedirect(req.getContextPath() + "/user/profile");
+        resp.sendRedirect(req.getContextPath() + "/login");
     }
 }

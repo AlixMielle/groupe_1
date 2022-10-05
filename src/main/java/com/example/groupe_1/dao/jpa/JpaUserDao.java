@@ -60,6 +60,24 @@ public class JpaUserDao implements UserDao {
         return Optional.ofNullable(user);
     }
 
+    @Override
+    public Optional<User> findByLogin(String email, String password){
+        EntityManagerFactory emf = EMFManager.getEMF();
+        EntityManager em = emf.createEntityManager();
+        User user = null;
+        try {
+            return Optional.of(em.createQuery("SELECT u FROM User u WHERE u.email = :email AND u.password = :password", User.class)
+                    .setParameter("email", email)
+                    .setParameter("password", password)
+                    .getSingleResult());
+        } catch (RuntimeException re) {
+            re.printStackTrace();
+        } finally {
+            em.close();
+        }
+        return Optional.ofNullable(user);
+    }
+
     /**
      * A method to create a user.
      *

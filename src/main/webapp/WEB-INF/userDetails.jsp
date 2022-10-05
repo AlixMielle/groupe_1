@@ -21,9 +21,9 @@
                     <h5 class="card-title text">${user.username}</h5>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Firstname : ${user.surface}</li>
-                    <li class="list-group-item">Lastname : ${user.inhabitant}</li>
-                    <li class="list-group-item">email : ${user.latitude}</li>
+                    <li class="list-group-item">Firstname : ${user.firstname}</li>
+                    <li class="list-group-item">Lastname : ${user.lastname}</li>
+                    <li class="list-group-item">email : ${user.email}</li>
                     <li class="list-group-item">pictureUrl : ${user.pictureUrl}</li>
                     <li class="list-group-item">password : ${user.password}</li>
                 </ul>

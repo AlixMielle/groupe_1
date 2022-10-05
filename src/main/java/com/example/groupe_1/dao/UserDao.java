@@ -10,6 +10,8 @@ public interface UserDao {
 
     Optional<User> findOne(int id);
 
+    Optional<User> findByLogin(String email, String password);
+
     boolean create(User user);
 
     boolean edit(User user);
