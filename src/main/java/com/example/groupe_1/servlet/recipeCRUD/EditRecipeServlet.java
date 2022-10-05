@@ -1,8 +1,10 @@
 package com.example.groupe_1.servlet.recipeCRUD;
 
 import com.example.groupe_1.dao.DaoFactory;
+import com.example.groupe_1.dao.IngredientDao;
 import com.example.groupe_1.dao.RecipeDao;
 import com.example.groupe_1.entity.Difficulty;
+import com.example.groupe_1.entity.Ingredient;
 import com.example.groupe_1.entity.Recipe;
 import com.example.groupe_1.entity.Type;
 import jakarta.servlet.RequestDispatcher;
@@ -13,6 +15,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 
 @WebServlet("/recipe/edit")
@@ -20,6 +23,7 @@ public class EditRecipeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         RecipeDao recipeDao = DaoFactory.getRecipeDAO();
         Optional<Recipe> optionalRecipe = recipeDao.findOne(Integer.parseInt(req.getParameter("recipeId")));
         if(optionalRecipe.isPresent()){
@@ -40,16 +44,19 @@ public class EditRecipeServlet extends HttpServlet {
 
         String id = req.getParameter("recipeId"); //must be the id passed on originally
         String name = req.getParameter("name");
+        String nbPerson = req.getParameter("nbPerson");
         String type = req.getParameter("type");
         String timePreparation = req.getParameter("timePreparation");
         String difficulty = req.getParameter("difficulty");
         String price = req.getParameter("price");
+
 
         try{
             RecipeDao recipeDao = DaoFactory.getRecipeDAO();
             recipeDao.edit(new Recipe(
                     Integer.parseInt(id),
                     name,
+                    Integer.parseInt(nbPerson),
                     Type.valueOf(type.toUpperCase()),
                     Integer.parseInt(timePreparation),
                     Integer.parseInt(timePreparation),
@@ -57,6 +64,7 @@ public class EditRecipeServlet extends HttpServlet {
                     Difficulty.valueOf(difficulty.toUpperCase()),
                     Float.parseFloat(price)
             ));
+
         }catch (Exception e){
             //if edit fails, send back to the edit page for the same recipe (will reload DB data)
             e.printStackTrace();

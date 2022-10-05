@@ -51,6 +51,7 @@ public class LoginServlet extends HttpServlet {
             if (userOptional.isPresent()) {
                 req.getSession().setAttribute("userId", userOptional.get().getId());
                 res.sendRedirect((req.getContextPath() + "/user/profile"));
+
                 return;
             } else {
                 indication.put("login", "Connexion impossible, veuillez réessayer");
