@@ -15,7 +15,7 @@
 <body>
 
 <!-- header -->
-<jsp:include page="/WEB-INF/header.jsp"></jsp:include>
+<jsp:include page="header.jsp"/>
 
 <div class="container">
 
@@ -175,7 +175,7 @@
 </div>
 
 <!-- footer -->
-<jsp:include page="/WEB-INF/footer.jsp"></jsp:include>
+<jsp:include page="footer.jsp"/>
 
 </body>
 </html>
