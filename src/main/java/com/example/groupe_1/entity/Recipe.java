@@ -25,6 +25,7 @@ public class Recipe {
 
     @OneToMany(
             mappedBy = "recipe",
+            fetch = FetchType.EAGER,
             cascade = {CascadeType.PERSIST, CascadeType.MERGE},
             orphanRemoval = true)
     private List<RecipeIngredient> ingredients = new ArrayList<>();

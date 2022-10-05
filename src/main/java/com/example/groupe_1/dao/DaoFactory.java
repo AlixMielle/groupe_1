@@ -12,7 +12,7 @@ public final class DaoFactory {
     public static UserDao getUserDAO() {
         return new JpaUserDao();
     }
-    public static RecipeDao getRecipeDao() {
+    public static RecipeDao getRecipeDAO() {
         return new JpaRecipeDao();
     }
     public static IngredientDao getIngredientDAO() {
