@@ -24,8 +24,11 @@ public class Recipe {
 
     private int nbPerson;
 
-    @OneToMany(mappedBy = "recipe")
-    private List<RecipeStep> steps; //etapes de recette
+    @OneToMany(mappedBy = "recipe",
+            fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
+    private List<RecipeStep> steps = new ArrayList<>(); //etapes de recette
 
     @OneToMany(
             mappedBy = "recipe",
@@ -147,6 +150,11 @@ public class Recipe {
 
     public void setSteps(List<RecipeStep> steps) {
         this.steps = steps;
+    }
+
+    public void addStep(RecipeStep step){
+        this.steps.add(step);
+        step.setRecipe(this);
     }
 
     public List<RecipeIngredient> getIngredients() {

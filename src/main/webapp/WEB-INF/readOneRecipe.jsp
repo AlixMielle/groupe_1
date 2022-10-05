@@ -21,6 +21,9 @@
             <c:forEach items="${recipe.ingredients}" var="i">
                 <a>${i.ingredient.name} : ${i.qte} g</a>
             </c:forEach>
+            <c:forEach items="${recipe.steps}" var="s">
+                <p>Etape ${s.step}: ${s.description}</p>
+            </c:forEach>
         </div>
 
     <a href="${pageContext.request.contextPath}/recipe/edit?recipeId=${recipe.id}">Modifier</a>
