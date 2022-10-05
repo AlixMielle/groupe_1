@@ -22,8 +22,8 @@
     <h1 class="h3 mb-3 fw-normal pt-2 text-center">Créez votre recette !</h1>
 
     <div class="row">
-        <form class="mb-6 p-1" method="post" action="${pageContext.request.contextPath}/auth/recipe/add>
-            <div class="row mb-3 ">
+        <form class="mb-6 p-1" method="post" action="${pageContext.request.contextPath}/auth/recipe/add">
+            <div class="row m-3">
                 <div class="col-4">
                     <label for="name">Titre de la recette :</label>
                     <input type="text" id="name" name="name" required>
@@ -41,7 +41,7 @@
                 <div class="col-4">
                     <label for="timePreparation">Temps de préparation :</label>
                     <input type="number" id="timePreparation" name="timePreparation" value="0" min="0">
-                </div> 
+                </div>
             </div>
 
             <div class="row mb-3">
@@ -141,7 +141,8 @@
                 <div class="col-4">
                     <label for="step1" class="form-label">Etape 4:</label>
                     <textarea type="text" id="step4" name="step4" rows="2"
-                              placeholder="Saisir la quatrième étape de la recette"></textarea>
+                              placeholder="Saisir la quatrième étape de la recette">
+                    </textarea>
                 </div>
             </div>
             <div class="row mb-3 ">
@@ -170,6 +171,7 @@
                 <button class="btn btn-lg btn-secondary p-2" type="reset">Annuler</button>
             </div>
         </form>
+
         <a class="h6 mb-3 fw-normal" href="${pageContext.request.contextPath}/recipe/all">Retour</a>
     </div>
 </div>

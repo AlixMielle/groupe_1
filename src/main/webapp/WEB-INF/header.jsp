@@ -40,8 +40,8 @@
               Profil
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/auth/user/edit" style="color: #EBB917">Éditer</a></li>
-              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/auth/user/delete" style="color: #EBB917">Supprimer</a></li>
+              <%--<li><a class="dropdown-item" href="${pageContext.request.contextPath}/auth/user/edit" style="color: #EBB917">Éditer</a></li>
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/auth/user/delete" style="color: #EBB917">Supprimer</a></li>--%>
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/auth/user/profile" style="color: #EBB917">Consulter</a></li>
             </ul>
           </li>
@@ -54,7 +54,7 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <c:if test="${!empty sessionScope.userId}">
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/auth/recipe/add" style="color: #EBB917">Ajouter</a></li>
-              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/auth/recipe/delete" style="color: #EBB917">Supprimer</a></li>
+              <%--<li><a class="dropdown-item" href="${pageContext.request.contextPath}/auth/recipe/delete" style="color: #EBB917">Supprimer</a></li>--%>
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/auth/recipe/edit" style="color: #EBB917">Editer</a></li>
               </c:if>
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/recipe/search" style="color: #EBB917">Rechercher</a></li>
