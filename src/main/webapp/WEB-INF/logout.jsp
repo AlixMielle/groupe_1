@@ -20,7 +20,7 @@
 
 <section id="section1" class="container-fluid bg-light">
     <div class="h5 mb-3 fw-normal p-1">Etes-vous sûr de vouloir vous déconnecter ?</div>
-    <div class="container pb-3">
+    <div class="container pb-3 align-items-center">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4">
                 <div class="bloc">
