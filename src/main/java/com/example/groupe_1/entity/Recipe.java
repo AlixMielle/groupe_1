@@ -20,6 +20,8 @@ public class Recipe {
     private Difficulty difficulty; //enum pareil
     private float price; //en euros
 
+    private int nbPerson;
+
     @OneToMany(mappedBy = "recipe")
     private List<RecipeStep> steps; //etapes de recette
 
@@ -37,9 +39,10 @@ public class Recipe {
     //private Date dateAdded; //date de creation de la recette
 
 
-    public Recipe(int id, String name, Type type, int timePreparation, int timeRest, int timeCooking, Difficulty difficulty, float price) {
+    public Recipe(int id, String name, int nbPerson, Type type, int timePreparation, int timeRest, int timeCooking, Difficulty difficulty, float price) {
         this.id = id;
         this.name = name;
+        this.nbPerson = nbPerson;
         this.type = type;
         this.timePreparation = timePreparation;
         this.timeRest = timeRest;
@@ -119,6 +122,14 @@ public class Recipe {
         this.price = price;
     }
 
+    public int getNbPerson() {
+        return nbPerson;
+    }
+
+    public void setNbPerson(int nbPerson) {
+        this.nbPerson = nbPerson;
+    }
+
     public List<RecipeStep> getSteps() {
         return steps;
     }
@@ -140,6 +151,8 @@ public class Recipe {
         ingredients.add(recipeIngredient);
         ingredient.getRecipes().add(recipeIngredient);
     }
+
+
 
 
 }

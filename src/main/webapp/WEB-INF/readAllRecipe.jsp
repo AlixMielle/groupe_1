@@ -19,9 +19,19 @@
             <div>
                 <a>${recipe.id}</a>
                 <a>${recipe.name}</a>
-                <a>${recipe.type}</a>
+                <a>${recipe.nbPerson}</a>
+
+
+                <a><c:if test="${recipe.type == 'ENTREE'}">Entrée</c:if></a>
+                <a><c:if test="${recipe.type == 'PLAT'}">Plat</c:if></a>
+                <a><c:if test="${recipe.type == 'DESSERT'}">Dessert</c:if></a>
+
                 <a>${recipe.timePreparation}, ${recipe.timeRest}, ${recipe.timeCooking}</a>
-                <a>${recipe.difficulty}</a>
+
+                <a><c:if test="${recipe.difficulty == 'EASY'}">Facile</c:if></a>
+                <a><c:if test="${recipe.difficulty == 'MEDIUM'}">Moyen</c:if></a>
+                <a><c:if test="${recipe.difficulty == 'HARD'}">Difficile</c:if></a>
+
                 <a>${recipe.price}</a>
                 <a href="${pageContext.request.contextPath}/recipe?recipeId=${recipe.id}">Details</a>
                 <a href="${pageContext.request.contextPath}/recipe/edit?recipeId=${recipe.id}">Edit</a>

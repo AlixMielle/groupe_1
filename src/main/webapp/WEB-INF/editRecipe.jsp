@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -15,6 +15,10 @@
             <input hidden type="text" id="recipeId" name="recipeId" value="${recipe.id}">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" value="${recipe.name}">
+            <div class="mb-3">
+                <label for="nbPerson">Nombre de personnes:</label>
+                <input type="number" id="nbPerson" name="nbPerson" value="${recipe.nbPerson}">
+            </div>
             <br>
             <label for="timePreparation">Temps de préparation (minutes):</label>
             <input type="number" id="timePreparation" name="timePreparation" value="${recipe.timePreparation}">
@@ -30,18 +34,74 @@
             <br>
             <label for="type">Type de plat:</label>
             <select typeof="text" id="type" name="type">
-                <option value="ENTREE">Entrée</option>
-                <option value="PLAT">Plat</option>
-                <option value="DESSERT">Dessert</option>
+                <option <c:if test="${recipe.type == 'ENTREE'}">selected</c:if> value="ENTREE">Entrée</option>
+                <option <c:if test="${recipe.type == 'PLAT'}">selected</c:if> value="PLAT">Plat</option>
+                <option <c:if test="${recipe.type == 'DESSERT'}">selected</c:if> value="DESSERT">Dessert</option>
             </select>
             <br>
             <label for="difficulty">Difficulté:</label>
             <select typeof="text" id="difficulty" name="difficulty">
-                <option value="EASY">Facile</option>
-                <option value="MEDIUM">Moyen</option>
-                <option value="HARD">Difficile</option>
+                <option <c:if test="${recipe.difficulty == 'EASY'}">selected</c:if> value="EASY">Facile</option>
+                <option <c:if test="${recipe.difficulty == 'MEDIUM'}">selected</c:if> value="MEDIUM">Moyen</option>
+                <option <c:if test="${recipe.difficulty == 'HARD'}">selected</c:if> value="HARD">Difficile</option>
             </select>
             <br>
+            <%--<div class="mb-3">
+                <input hidden type="text" id="ingredientId" name="ingredientId" value="${ingredient.id}">
+                <label for="ingredient1" class="form-label">Ingrédient</label>
+                <select class="form-select" aria-label="Default select example" id="ingredient1" name="ingredient1"
+                        required>
+                    <c:forEach items="${ingredientList}" var="i">
+                        <option value="${i.id}">${i.name}</option>
+                    </c:forEach>
+                </select>
+                <label for="qte1" class="form-label">Quantité</label>
+                <input type="number" id="qte1" name="qte1" value="0" step="10">
+            </div>
+            <div class="mb-3">
+                <label for="ingredient2" class="form-label">Ingrédient</label>
+                <select class="form-select" aria-label="Default select example" id="ingredient2" name="ingredient2"
+                        required>
+                    <c:forEach items="${ingredientList}" var="i">
+                        <option value="${i.id}">${i.name}</option>
+                    </c:forEach>
+                </select>
+                <label for="qte2" class="form-label">Quantité</label>
+                <input type="number" id="qte2" name="qte2" value="0" step="10">
+            </div>
+            <div class="mb-3">
+                <label for="ingredient3" class="form-label">Ingrédient</label>
+                <select class="form-select" aria-label="Default select example" id="ingredient3" name="ingredient3"
+                        required>
+                    <c:forEach items="${ingredientList}" var="i">
+                        <option value="${i.id}">${i.name}</option>
+                    </c:forEach>
+                </select>
+                <label for="qte3" class="form-label">Quantité</label>
+                <input type="number" id="qte3" name="qte3" value="0" step="10">
+            </div>
+            <div class="mb-3">
+                <label for="ingredient4" class="form-label">Ingrédient</label>
+                <select class="form-select" aria-label="Default select example" id="ingredient4" name="ingredient4"
+                        required>
+                    <c:forEach items="${ingredientList}" var="i">
+                        <option value="${i.id}">${i.name}</option>
+                    </c:forEach>
+                </select>
+                <label for="qte4" class="form-label">Quantité</label>
+                <input type="number" id="qte4" name="qte4" value="0" step="10">
+            </div>
+            <div class="mb-3">
+                <label for="ingredient5" class="form-label">Ingrédient</label>
+                <select class="form-select" aria-label="Default select example" id="ingredient5" name="ingredient5"
+                        required>
+                    <c:forEach items="${ingredientList}" var="i">
+                        <option value="${i.id}">${i.name}</option>
+                    </c:forEach>
+                </select>
+                <label for="qte5" class="form-label">Quantité</label>
+                <input type="number" id="qte5" name="qte5" value="0" step="10">
+            </div>--%>
             <button type="submit">Confirm changes</button>
         </form>
 
